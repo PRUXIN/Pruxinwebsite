@@ -8,7 +8,7 @@ export default function GlobalNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isDarkPage = location.pathname === '/' || location.pathname === '/clara';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +33,7 @@ export default function GlobalNavigation() {
     { name: 'Clara', href: '/clara', accent: true },
   ];
 
-  const useDarkText = !isHomePage || isScrolled;
+  const useDarkText = !isDarkPage || isScrolled;
 
   return (
     <>

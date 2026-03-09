@@ -7,6 +7,7 @@ import AboutPage from "./components/pages/AboutPage";
 import ContactPage from "./components/pages/ContactPage";
 import ContentPage from "./components/pages/ContentPage";
 import ClaraPage from "./components/pages/ClaraPage";
+import PrivacyPage from "./components/pages/PrivacyPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: "content", Component: ContentPage },
       { path: "contact", Component: ContactPage },
       { path: "clara", Component: ClaraPage },
+      { path: "privacy", Component: PrivacyPage },
       {
         path: "*",
         Component: () => {

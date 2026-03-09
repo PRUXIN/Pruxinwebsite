@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Check } from 'lucide-react';
@@ -6,6 +6,18 @@ import profileImage from 'figma:asset/d4d9a5fd9aff0e363729e74bd4b4f829bf50730c.p
 import { RevealOnScroll, MagneticWrap, StaggerContainer, StaggerItem } from '../ui/effects';
 
 export default function AboutPage() {
+  useEffect(() => {
+    document.title = 'About Pranav Raval | Senior UX & Product Designer — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'Pranav Raval is a Senior UX and Product Designer based in Glasgow. 8+ years experience. Founder of PRUXIN. Specialist in SaaS, compliance systems, and AI-assisted workflows.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+
   return (
     <>
       {/* Hero */}

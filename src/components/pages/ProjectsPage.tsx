@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, Eye, ExternalLink } from 'lucide-react';
@@ -658,6 +658,18 @@ function ProjectCard({
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function ProjectsPage() {
+  useEffect(() => {
+    document.title = 'Projects | UX Case Studies & Product Design Work — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'UX and product design case studies from PRUXIN. Threecolts HUB, YooDrive marketplace, SaaS dashboards, onboarding flows, and more.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightboxProject, setLightboxProject] = useState<Project | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);

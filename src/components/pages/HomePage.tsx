@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronDown, ClipboardCheck, Layers, ArrowRight, Workflow, Sparkles, Phone, Zap } from 'lucide-react';
@@ -17,6 +17,17 @@ import {
 } from '../ui/effects';
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation.');
+  }, []);
+
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.95]);

@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Send, Mail, Linkedin, Instagram, Facebook, CheckCircle, Clock, MessageSquare, Phone } from 'lucide-react';
+import { Send, Mail, Linkedin, Instagram, Facebook, CheckCircle, Clock, Phone } from 'lucide-react';
 import { RevealOnScroll } from '../ui/effects';
 
 export default function ContactPage() {
+  // Step 5e — SEO useEffect
+  useEffect(() => {
+    document.title = 'Contact PRUXIN | Talk to a UX Designer';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    const prev = meta?.getAttribute('content') || '';
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'Get in touch with PRUXIN. Tell us about your product and what you need to fix. We respond within 24 hours.');
+    return () => {
+      document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise';
+      if (meta) meta.setAttribute('content', prev);
+    };
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,14 +29,40 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  // Step 5a — error state
+  const [error, setError] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  // Step 5b — real Web3Forms fetch
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setSending(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      const data = new FormData();
+      data.append('access_key', '4c9dec39-6838-45d9-9e95-0df8f4086157');
+      data.append('name', formData.name);
+      data.append('email', formData.email);
+      data.append('company', formData.company);
+      data.append('message', formData.message);
+      data.append('subject', 'New enquiry from pruxin.com');
+      data.append('from_name', 'PRUXIN Contact Form');
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitted(true);
+      } else {
+        setError('Something went wrong. Please email pranav@pruxin.com directly.');
+      }
+    } catch {
+      setError('Could not send your message. Please check your connection and try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -96,6 +139,9 @@ export default function ContactPage() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Step 5c — honeypot */}
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" readOnly />
+
                 {[
                   { id: 'name', label: 'Name *', type: 'text', placeholder: 'Your name', required: true },
                   { id: 'email', label: 'Email *', type: 'email', placeholder: 'you@company.com', required: true },
@@ -155,6 +201,20 @@ export default function ContactPage() {
                   </span>
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 </button>
+
+                {/* Step 5d — error message */}
+                {error && (
+                  <p className="text-sm text-red-500 text-center mt-3">{error}</p>
+                )}
+
+                {/* Step 5d — GDPR copy */}
+                <p className="text-xs text-gray-400 text-center mt-4">
+                  By submitting this form, you agree to our{' '}
+                  <a href="/privacy" className="underline hover:text-gray-600 transition-colors">
+                    Privacy Policy
+                  </a>
+                  . Your data is securely processed to handle your enquiry.
+                </p>
               </form>
             )}
           </RevealOnScroll>

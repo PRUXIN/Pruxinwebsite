@@ -1,0 +1,517 @@
+# PRUXIN Website — CoSTAR Meta Prompt
+### For use in Figma Make AI code editor
+### All 12 files. Zero layout changes. Zero animation changes.
+
+---
+
+## CONTEXT
+
+You are working on a production React SPA called pruxin.com — a clarity-first UX consultancy website built with Vite, React Router, TypeScript, Tailwind CSS, and Framer Motion (via `motion/react`). The codebase uses CSS custom properties defined in `styles/globals.css` (e.g. `var(--color-black)`, `var(--color-teal)`, `var(--color-gray-50)`).
+
+The site has 7 pages: `/`, `/services`, `/projects`, `/about`, `/content`, `/contact`, `/clara`.
+
+A full audit has been completed. The following bugs are confirmed from source code inspection:
+
+1. `GlobalNavigation.tsx` — nav renders white background on `/clara` which has a dark hero (`#060B14`), causing a visible visual seam
+2. `ClaraPage.tsx` — uses hardcoded `#00F5A0` neon green that exists nowhere else in the design system, breaking brand consistency
+3. `ContactPage.tsx` — `handleSubmit` uses a fake `setTimeout` — form submits to nowhere, all leads are lost
+4. `ContactPage.tsx` — no honeypot field, no GDPR compliance copy, no error handling, no SEO meta
+5. `index.html` (root) — title is `"PRUXIN Website"` — placeholder, not production-ready
+6. `src/public/index.html` — contains stale "Free Website for Small Businesses" SEO content from a dead campaign
+7. `HomePage.tsx`, `ServicesPage.tsx`, `AboutPage.tsx`, `ProjectsPage.tsx`, `ContactPage.tsx` — no per-page `document.title` or meta description management
+8. `routes.ts` — no `/privacy` route, which will be linked in the GDPR copy
+9. `globals.css` — no global `focus-visible` rule; keyboard navigation states are missing or inconsistent
+
+---
+
+## OBJECTIVE
+
+Patch all 12 confirmed bugs across the codebase with surgical, minimal code changes. The goal is zero visual regressions — every layout, spacing token, Framer Motion animation, Tailwind class, and brand colour on all pages except Clara's teal swap must remain exactly as-is. Only fix what is broken. Only add what is missing.
+
+---
+
+## STEPS
+
+Work through each file in this exact order. Do not skip any step. Do not combine steps.
+
+### STEP 1 — Fix `index.html` (root, the file Vite actually serves)
+
+Replace the existing `<head>` content with the following — do not change `<body>`:
+
+```html
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRUXIN | Clarity-First UX Design for SaaS &amp; Enterprise</title>
+  <meta name="description" content="PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation." />
+</head>
+```
+
+---
+
+### STEP 2 — Rewrite `src/public/index.html`
+
+The entire file contains stale copy from a dead "Free Website for Small Businesses" campaign. Replace the entire file content with this clean, accurate version:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRUXIN | Clarity-First UX Design for SaaS &amp; Enterprise</title>
+  <meta name="description" content="PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation." />
+  <link rel="canonical" href="https://pruxin.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pruxin.com/" />
+  <meta property="og:title" content="PRUXIN | Clarity-First UX Design for SaaS &amp; Enterprise" />
+  <meta property="og:description" content="PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones." />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0F172A" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "PRUXIN",
+    "description": "Clarity-first UX and product design consultancy specialising in SaaS, AI automation workflows, and complex systems.",
+    "url": "https://pruxin.com",
+    "email": "pranav@pruxin.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "GB", "addressRegion": "Scotland" },
+    "founder": { "@type": "Person", "name": "Pranav Raval", "jobTitle": "Founder & UX/Product Designer" },
+    "sameAs": ["https://www.linkedin.com/company/pruxin", "https://www.linkedin.com/in/pranavraval"]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
+```
+
+---
+
+### STEP 3 — Fix `GlobalNavigation.tsx`
+
+**Exact change — replace 2 lines only. Do not touch anything else in this file.**
+
+Find this exact code block:
+```ts
+const location = useLocation();
+const isHomePage = location.pathname === '/';
+```
+Replace with:
+```ts
+const location = useLocation();
+const isDarkPage = location.pathname === '/' || location.pathname === '/clara';
+```
+
+Then find this exact line:
+```ts
+const useDarkText = !isHomePage || isScrolled;
+```
+Replace with:
+```ts
+const useDarkText = !isDarkPage || isScrolled;
+```
+
+That is the complete change to this file. Nothing else.
+
+---
+
+### STEP 4 — Fix `ClaraPage.tsx` colour constants
+
+**Exact change — replace 3 constant values only. Do not touch any other line in this file.**
+
+Find this exact block:
+```ts
+const AQUA = '#00F5A0';
+const AQUA_DIM = 'rgba(0,245,160,0.12)';
+const AQUA_GLOW = 'rgba(0,245,160,0.25)';
+```
+Replace with:
+```ts
+const AQUA = '#14B8A6';
+const AQUA_DIM = 'rgba(20,184,166,0.12)';
+const AQUA_GLOW = 'rgba(20,184,166,0.25)';
+```
+
+`#14B8A6` is `var(--color-teal)` already defined in `globals.css` and used on the homepage AI Automation service card. This is the only visual change to Clara. All layout, animation, dark background, and structure stays identical.
+
+---
+
+### STEP 5 — Rebuild `ContactPage.tsx`
+
+This file needs 5 targeted changes. Apply them in order.
+
+**5a — Add `error` state variable**
+
+Find the existing state declarations:
+```ts
+const [submitted, setSubmitted] = useState(false);
+const [sending, setSending] = useState(false);
+```
+Add one line immediately after:
+```ts
+const [submitted, setSubmitted] = useState(false);
+const [sending, setSending] = useState(false);
+const [error, setError] = useState<string | null>(null);
+```
+
+**5b — Replace the fake `handleSubmit` with a real Web3Forms fetch**
+
+Find this entire function and replace it completely:
+```ts
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSending(true);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  setSending(false);
+  setSubmitted(true);
+};
+```
+Replace with:
+```ts
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSending(true);
+  setError(null);
+  try {
+    const data = new FormData();
+    data.append('access_key', '4c9dec39-6838-45d9-9e95-0df8f4086157');
+    data.append('name', formData.name);
+    data.append('email', formData.email);
+    data.append('company', formData.company);
+    data.append('message', formData.message);
+    data.append('subject', 'New enquiry from pruxin.com');
+    data.append('from_name', 'PRUXIN Contact Form');
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data,
+    });
+    const json = await res.json();
+    if (json.success) {
+      setSubmitted(true);
+    } else {
+      setError('Something went wrong. Please email pranav@pruxin.com directly.');
+    }
+  } catch {
+    setError('Could not send your message. Please check your connection and try again.');
+  } finally {
+    setSending(false);
+  }
+};
+```
+
+**5c — Add honeypot field inside the `<form>` tag**
+
+Find the opening form tag:
+```tsx
+<form onSubmit={handleSubmit} className="space-y-5">
+```
+Add the honeypot as the very first child — one line immediately after:
+```tsx
+<form onSubmit={handleSubmit} className="space-y-5">
+  <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" readOnly />
+```
+
+**5d — Add error message display**
+
+Find the submit button closing tag and the `</form>` closing tag:
+```tsx
+                </button>
+              </form>
+```
+Replace with:
+```tsx
+                </button>
+
+                {error && (
+                  <p className="text-sm text-red-500 text-center mt-3">{error}</p>
+                )}
+
+                <p className="text-xs text-gray-400 text-center mt-4">
+                  By submitting this form, you agree to our{' '}
+                  <a href="/privacy" className="underline hover:text-gray-600 transition-colors">
+                    Privacy Policy
+                  </a>
+                  . Your data is securely processed to handle your enquiry.
+                </p>
+              </form>
+```
+
+**5e — Add SEO useEffect**
+
+Find the line that declares the component:
+```ts
+export default function ContactPage() {
+```
+Add a useEffect as the first thing inside the function body:
+```ts
+export default function ContactPage() {
+  useEffect(() => {
+    document.title = 'Contact PRUXIN | Talk to a UX Designer';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    const prev = meta?.getAttribute('content') || '';
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'Get in touch with PRUXIN. Tell us about your product and what you need to fix. We respond within 24 hours.');
+    return () => {
+      document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise';
+      if (meta) meta.setAttribute('content', prev);
+    };
+  }, []);
+```
+
+---
+
+### STEP 6 — Add SEO useEffect to `HomePage.tsx`
+
+Find the line:
+```ts
+export default function HomePage() {
+```
+Add immediately inside the function body, before any other hooks:
+```ts
+  useEffect(() => {
+    document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation.');
+  }, []);
+```
+Add `useEffect` to the existing React import if not already present.
+
+---
+
+### STEP 7 — Add SEO useEffect to `ServicesPage.tsx`
+
+Find:
+```ts
+export default function ServicesPage() {
+```
+Add immediately inside:
+```ts
+  useEffect(() => {
+    document.title = 'Services | UX Audits, Product Design & AI Automation — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'PRUXIN services: SaaS UX audits, end-to-end product design, and AI voice automation. Clarity-first. Delivery-focused.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+```
+Add `useEffect` to the React import.
+
+---
+
+### STEP 8 — Add SEO useEffect to `AboutPage.tsx`
+
+Find:
+```ts
+export default function AboutPage() {
+```
+Add immediately inside:
+```ts
+  useEffect(() => {
+    document.title = 'About Pranav Raval | Senior UX & Product Designer — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'Pranav Raval is a Senior UX and Product Designer based in Glasgow. 8+ years experience. Founder of PRUXIN. Specialist in SaaS, compliance systems, and AI-assisted workflows.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+```
+Add `useEffect` and `React` to the import if not already present.
+
+---
+
+### STEP 9 — Add SEO useEffect to `ProjectsPage.tsx`
+
+Find:
+```ts
+export default function ProjectsPage() {
+```
+Add immediately inside:
+```ts
+  useEffect(() => {
+    document.title = 'Projects | UX Case Studies & Product Design Work — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'UX and product design case studies from PRUXIN. Threecolts HUB, YooDrive marketplace, SaaS dashboards, onboarding flows, and more.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+```
+
+---
+
+### STEP 10 — Add `/privacy` route to `routes.ts`
+
+Add the import at the top of the file with the other page imports:
+```ts
+import PrivacyPage from './components/pages/PrivacyPage';
+```
+
+Add the route inside the `children` array, after the `clara` route and before the `*` wildcard:
+```ts
+{ path: 'privacy', Component: PrivacyPage },
+```
+
+---
+
+### STEP 11 — Create `components/pages/PrivacyPage.tsx`
+
+Create this file from scratch. Clean, minimal, on-brand. Uses existing design system tokens only:
+
+```tsx
+import React, { useEffect } from 'react';
+
+export default function PrivacyPage() {
+  useEffect(() => {
+    document.title = 'Privacy Policy | PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'PRUXIN Privacy Policy. How we collect, use, and protect your data in accordance with UK GDPR.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+
+  return (
+    <section className="pt-[140px] pb-[120px] px-6 bg-[var(--color-gray-50)] min-h-screen">
+      <div className="max-w-[720px] mx-auto">
+        <h1 className="type-display-small text-[var(--color-black)] mb-4">Privacy Policy</h1>
+        <p className="type-body-small text-[var(--color-gray-500)] mb-16">Last updated: March 2026</p>
+
+        <div className="space-y-12 type-body-medium text-[var(--color-gray-700)]">
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">1. Who we are</h2>
+            <p>PRUXIN is a UX and product design consultancy operated by Pranav Raval, based in Glasgow, United Kingdom. We can be reached at <a href="mailto:pranav@pruxin.com" className="text-[var(--color-electric-blue)] hover:underline">pranav@pruxin.com</a>.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">2. What data we collect</h2>
+            <p>When you submit the contact form on pruxin.com, we collect your name, email address, company name (optional), and the message you write. We do not collect any other personal data unless you provide it directly.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">3. How we use your data</h2>
+            <p>We use the information you submit solely to respond to your enquiry. We do not sell, share, or rent your data to any third party. We do not add you to any mailing list without your explicit consent.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">4. How your data is processed</h2>
+            <p>Contact form submissions are routed securely via Web3Forms, a third-party serverless form handling service. Your data passes through their infrastructure before being delivered to our inbox. You can review their privacy practices at <a href="https://web3forms.com/privacy" className="text-[var(--color-electric-blue)] hover:underline" target="_blank" rel="noreferrer">web3forms.com/privacy</a>.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">5. Data retention</h2>
+            <p>We retain your contact details only for as long as necessary to respond to your enquiry or fulfil any agreed work. You may request deletion of your data at any time by emailing us directly.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">6. Your rights under UK GDPR</h2>
+            <p>You have the right to access, correct, or delete any personal data we hold about you. You also have the right to restrict or object to processing, and the right to data portability. To exercise any of these rights, contact us at <a href="mailto:pranav@pruxin.com" className="text-[var(--color-electric-blue)] hover:underline">pranav@pruxin.com</a>.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">7. Cookies</h2>
+            <p>This site uses Google Analytics to understand visitor behaviour. This may set cookies on your device. No personally identifiable information is collected via analytics. You can opt out via your browser settings or the Google Analytics opt-out extension.</p>
+          </div>
+
+          <div>
+            <h2 className="type-headline-small text-[var(--color-black)] mb-4">8. Contact</h2>
+            <p>For any privacy-related questions, email <a href="mailto:pranav@pruxin.com" className="text-[var(--color-electric-blue)] hover:underline">pranav@pruxin.com</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+---
+
+### STEP 12 — Add global focus-visible rule to `styles/globals.css`
+
+Find the end of the `:root` block or the first utility class section. Add this rule once — do not add it to individual component files:
+
+```css
+/* Global keyboard focus states — WCAG 2.1 AA */
+:is(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+```
+
+For Clara's dark page specifically, add a scoped override immediately after so focus rings are visible on dark backgrounds:
+
+```css
+.clara-page :is(button, a, input):focus-visible {
+  outline-color: #14B8A6;
+}
+```
+
+---
+
+## TOOLS
+
+- Language: TypeScript + React (functional components, hooks)
+- Styling: Tailwind CSS utility classes + CSS custom properties from `styles/globals.css`
+- Routing: `react-router` (`useLocation`, `Link`)
+- Animation: `motion/react` — DO NOT modify any motion component, animate prop, transition, or variant
+- Form submission: native `fetch()` with `FormData` — no new npm packages
+- Design tokens: use `var(--color-teal)` = `#14B8A6`, `var(--color-black)`, `var(--color-gray-50)`, `var(--color-gray-500)`, `var(--color-electric-blue)` — all already defined in `globals.css`
+
+---
+
+## ACTIONS — Output Rules
+
+- Output the **complete, updated file** for every file changed — not diffs, not partial snippets
+- Output files in the exact order of the steps above: `index.html` → `src/public/index.html` → `GlobalNavigation.tsx` → `ClaraPage.tsx` → `ContactPage.tsx` → `HomePage.tsx` → `ServicesPage.tsx` → `AboutPage.tsx` → `ProjectsPage.tsx` → `routes.ts` → `PrivacyPage.tsx` → `globals.css`
+- Preserve every existing import statement. Add new imports only where a hook or component is newly used
+- Do not rename any component, function, or variable
+- Do not add any new npm dependencies
+- Do not alter any Tailwind class that already exists in a component unless explicitly instructed above
+- Do not add console.log statements
+
+---
+
+## REFLECTION — Self-check before outputting each file
+
+Before outputting each file, verify:
+
+1. **GlobalNavigation.tsx** — Does the `isDarkPage` check include both `'/'` and `'/clara'`? Is `isHomePage` fully removed and replaced?
+2. **ClaraPage.tsx** — Are all three constants updated? Is `#00F5A0` completely gone from this file?
+3. **ContactPage.tsx** — Does `handleSubmit` contain a real `fetch()` to `https://api.web3forms.com/submit`? Is the honeypot outside the `.map()` loop? Does the error message appear before the GDPR copy? Does the GDPR copy link to `/privacy`?
+4. **Every page SEO useEffect** — Does it create the meta element if `querySelector` returns null (not just call `.setAttribute` on a potentially null value)?
+5. **routes.ts** — Is `PrivacyPage` imported? Is the `/privacy` route added before the `*` wildcard, not after it?
+6. **PrivacyPage.tsx** — Does it use only existing design system tokens? No hardcoded hex values except where unavoidable?
+7. **globals.css** — Is the focus-visible rule added once globally? Is a scoped Clara override present?
+8. **No animation changes** — confirm zero `motion`, `animate`, `transition`, `variants`, `initial`, `exit` props have been modified in any file
+
+If any check fails, correct the file before outputting it.

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ClipboardCheck, Layers, Workflow, Check } from 'lucide-react';
@@ -104,6 +104,18 @@ function ServiceSection({
 }
 
 export default function ServicesPage() {
+  useEffect(() => {
+    document.title = 'Services | UX Audits, Product Design & AI Automation — PRUXIN';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'PRUXIN services: SaaS UX audits, end-to-end product design, and AI voice automation. Clarity-first. Delivery-focused.');
+    return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
+  }, []);
+
   return (
     <>
       {/* Hero */}
