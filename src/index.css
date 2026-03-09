@@ -3061,6 +3061,13 @@
   }
 
   @media (hover: hover) {
+    .hover\:shadow-\[0_0_40px_rgba\(20\,184\,166\,0\.4\)\]:hover {
+      --tw-shadow: 0 0 40px var(--tw-shadow-color, #14b8a666);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:shadow-\[0_4px_20px_rgba\(0\,0\,0\,0\.2\)\]:hover {
       --tw-shadow: 0 4px 20px var(--tw-shadow-color, #0003);
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);

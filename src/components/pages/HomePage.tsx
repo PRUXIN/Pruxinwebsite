@@ -199,9 +199,9 @@ export default function HomePage() {
 
       {/* ===== CLARA FEATURE SECTION — Step 2 ===== */}
       <section className="py-[96px] px-6 relative overflow-hidden" style={{ background: '#060B14' }}>
-        {/* Radial aqua glow */}
+        {/* Radial teal glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 60% 70% at 80% 50%, rgba(0,245,160,0.09) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 60% 70% at 80% 50%, rgba(20,184,166,0.09) 0%, transparent 70%)',
         }} />
         {/* Faint grid */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{
@@ -220,15 +220,15 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-                style={{ background: 'rgba(0,245,160,0.12)', border: '1px solid rgba(0,245,160,0.25)' }}
+                style={{ background: 'rgba(20,184,166,0.12)', border: '1px solid rgba(20,184,166,0.25)' }}
               >
                 <motion.span
                   className="w-2 h-2 rounded-full"
-                  style={{ background: '#00F5A0' }}
+                  style={{ background: '#14B8A6' }}
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
-                <span className="text-[13px] font-medium tracking-wide" style={{ color: '#00F5A0' }}>
+                <span className="text-[13px] font-medium tracking-wide" style={{ color: '#14B8A6' }}>
                   Featured — AI Voice Receptionist
                 </span>
               </motion.div>
@@ -245,8 +245,8 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-4 mb-10">
                   <a
                     href="tel:+441313815821"
-                    className="inline-flex items-center gap-2.5 h-[52px] px-8 rounded-full font-semibold text-[16px] text-black transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(0,245,160,0.4)]"
-                    style={{ background: '#00F5A0' }}
+                    className="inline-flex items-center gap-2.5 h-[52px] px-8 rounded-full font-semibold text-[16px] text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(20,184,166,0.4)]"
+                    style={{ background: '#14B8A6' }}
                   >
                     <Phone size={17} />
                     Call +44 131 381 5821
@@ -259,19 +259,19 @@ export default function HomePage() {
               </RevealOnScroll>
             </div>
 
-            {/* Right — demo card — kept exactly as-is */}
+            {/* Right — demo card */}
             <RevealOnScroll direction="right" delay={0.15}>
               <div
                 className="rounded-[24px] p-8 md:p-10 text-center"
-                style={{ background: 'rgba(0,245,160,0.07)', border: '1px solid rgba(0,245,160,0.20)' }}
+                style={{ background: 'rgba(20,184,166,0.07)', border: '1px solid rgba(20,184,166,0.20)' }}
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: '#00F5A0' }}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: '#14B8A6' }}>
                   Live demo line
                 </p>
                 <a
                   href="tel:+441313815821"
                   className="block text-[clamp(28px,4vw,44px)] font-bold mb-4 leading-tight tracking-tight hover:opacity-70 transition-opacity"
-                  style={{ color: '#00F5A0' }}
+                  style={{ color: '#14B8A6' }}
                 >
                   +44 131 381 5821
                 </a>
@@ -281,7 +281,7 @@ export default function HomePage() {
                     <motion.div
                       key={i}
                       className="w-[3px] rounded-full"
-                      style={{ background: '#00F5A0' }}
+                      style={{ background: '#14B8A6' }}
                       animate={{ scaleY: [h * 0.5, h, h * 0.3, h * 0.8, h * 0.5] }}
                       transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.1, ease: 'easeInOut' }}
                     />
