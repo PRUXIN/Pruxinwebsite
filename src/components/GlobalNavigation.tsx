@@ -1,3 +1,7 @@
+import image_158a51c794328aa68369a8c3dca9f94b3c81a32d from 'figma:asset/158a51c794328aa68369a8c3dca9f94b3c81a32d.png'
+import image_490eed63f1c3f23f26fd628533bb047c00df9c62 from 'figma:asset/490eed63f1c3f23f26fd628533bb047c00df9c62.png'
+import image_a0aec7389b59c267fe9e6cb147a75e605ac97963 from 'figma:asset/a0aec7389b59c267fe9e6cb147a75e605ac97963.png'
+import image_4878412310642e4b0929e7f9b194292f80ee733d from 'figma:asset/4878412310642e4b0929e7f9b194292f80ee733d.png'
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
@@ -5,19 +9,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import pruxinLogo from 'figma:asset/ed230e65ec8d7b6452e7e9e65ae016b014fa4be0.png';
 
 export default function GlobalNavigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isDarkPage = location.pathname === '/' || location.pathname === '/clara';
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -33,25 +27,25 @@ export default function GlobalNavigation() {
     { name: 'Clara', href: '/clara', accent: true },
   ];
 
-  const useDarkText = !isDarkPage || isScrolled;
+  const useDarkText = !isDarkPage;
 
   return (
     <>
       <nav
         className={`fixed top-[3px] left-0 right-0 z-50 transition-all duration-500 ${
           useDarkText
-            ? 'bg-white/70 backdrop-blur-2xl border-b border-[rgba(0,0,0,0.06)] shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
-            : 'bg-white/5 backdrop-blur-md'
+            ? 'bg-white/60 backdrop-blur-xl border-b border-white/20 shadow-[0_1px_12px_rgba(0,0,0,0.06)]'
+            : 'bg-black/20 backdrop-blur-xl border-b border-white/10'
         }`}
-        style={{ height: isScrolled ? '60px' : '64px' }}
+        style={{ height: '64px' }}
       >
         <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <motion.img
-              src={pruxinLogo}
+              src={image_158a51c794328aa68369a8c3dca9f94b3c81a32d}
               alt="PRUXIN"
-              className={`h-7 w-auto transition-all duration-300 ${useDarkText ? 'invert' : ''}`}
+              className={`h-7 w-auto transition-all duration-300 ${useDarkText ? '' : 'brightness-0 invert'}`}
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400 }}
             />
@@ -68,9 +62,9 @@ export default function GlobalNavigation() {
                     to={link.href}
                     className="relative ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-full transition-all duration-200"
                     style={{
-                      background: isActive ? '#00F5A0' : 'rgba(0,245,160,0.15)',
-                      color: isActive ? '#000' : '#00F5A0',
-                      border: '1px solid rgba(0,245,160,0.4)',
+                      background: isActive ? '#14B8A6' : 'rgba(20,184,166,0.15)',
+                      color: isActive ? '#fff' : '#14B8A6',
+                      border: '1px solid rgba(20,184,166,0.4)',
                     }}
                   >
                     {link.name}
@@ -161,7 +155,7 @@ export default function GlobalNavigation() {
                         ? (link as any).accent ? '' : 'gradient-text-blue-purple'
                         : (link as any).accent ? '' : 'text-[var(--color-black)]'
                     }`}
-                    style={(link as any).accent ? { color: '#007A52' } : {}}
+                    style={(link as any).accent ? { color: '#14B8A6' } : {}}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}

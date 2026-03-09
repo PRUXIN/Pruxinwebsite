@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router';
-import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronDown, ClipboardCheck, Layers, ArrowRight, Workflow, Sparkles, Phone, Zap } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import profileImage from 'figma:asset/d4d9a5fd9aff0e363729e74bd4b4f829bf50730c.png';
@@ -27,10 +27,6 @@ export default function HomePage() {
     }
     meta.setAttribute('content', 'PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation.');
   }, []);
-
-  const { scrollYProgress } = useScroll();
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.95]);
 
   // Step 3 — Services: AI Automation leads, UX Audits second, Product Design third
   const services = [
@@ -78,8 +74,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO SECTION — Step 1 ===== */}
-      <motion.section
-        style={{ opacity: heroOpacity, scale: heroScale }}
+      <section
         className="relative min-h-screen flex flex-col items-center justify-center pt-[120px] pb-[80px] px-6 overflow-hidden"
       >
         {/* Gradient Mesh Background */}
@@ -89,7 +84,7 @@ export default function HomePage() {
 
         {/* Animated gradient blobs */}
         <GradientBlobs />
-        <FloatingParticles count={40} />
+        <FloatingParticles count={15} />
 
         {/* Noise overlay */}
         <div
@@ -200,7 +195,7 @@ export default function HomePage() {
         >
           <ChevronDown size={22} />
         </motion.div>
-      </motion.section>
+      </section>
 
       {/* ===== CLARA FEATURE SECTION — Step 2 ===== */}
       <section className="py-[96px] px-6 relative overflow-hidden" style={{ background: '#060B14' }}>
