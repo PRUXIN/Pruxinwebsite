@@ -1,12 +1,9 @@
 import image_158a51c794328aa68369a8c3dca9f94b3c81a32d from 'figma:asset/158a51c794328aa68369a8c3dca9f94b3c81a32d.png'
-import image_490eed63f1c3f23f26fd628533bb047c00df9c62 from 'figma:asset/490eed63f1c3f23f26fd628533bb047c00df9c62.png'
-import image_a0aec7389b59c267fe9e6cb147a75e605ac97963 from 'figma:asset/a0aec7389b59c267fe9e6cb147a75e605ac97963.png'
-import image_4878412310642e4b0929e7f9b194292f80ee733d from 'figma:asset/4878412310642e4b0929e7f9b194292f80ee733d.png'
+import image_ed230e65ec8d7b6452e7e9e65ae016b014fa4be0 from 'figma:asset/ed230e65ec8d7b6452e7e9e65ae016b014fa4be0.png'
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import pruxinLogo from 'figma:asset/ed230e65ec8d7b6452e7e9e65ae016b014fa4be0.png';
 
 export default function GlobalNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,9 +40,9 @@ export default function GlobalNavigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <motion.img
-              src={image_158a51c794328aa68369a8c3dca9f94b3c81a32d}
+              src={isDarkPage ? image_ed230e65ec8d7b6452e7e9e65ae016b014fa4be0 : image_158a51c794328aa68369a8c3dca9f94b3c81a32d}
               alt="PRUXIN"
-              className={`h-7 w-auto transition-all duration-300 ${useDarkText ? '' : 'brightness-0 invert'}`}
+              className="h-7 w-auto transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400 }}
             />
@@ -62,9 +59,9 @@ export default function GlobalNavigation() {
                     to={link.href}
                     className="relative ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-full transition-all duration-200"
                     style={{
-                      background: isActive ? '#14B8A6' : 'rgba(20,184,166,0.15)',
-                      color: isActive ? '#fff' : '#14B8A6',
-                      border: '1px solid rgba(20,184,166,0.4)',
+                      background: isActive ? '#14B8A6' : 'rgba(20,184,166,0.12)',
+                      color: isActive ? '#fff' : '#0D9488',
+                      border: '1px solid rgba(20,184,166,0.7)',
                     }}
                   >
                     {link.name}
