@@ -1,3 +1,4 @@
+import image_6f8c5edaeb740b731193dba29ca1e221e355cd7d from 'figma:asset/6f8c5edaeb740b731193dba29ca1e221e355cd7d.png'
 import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
@@ -70,7 +71,7 @@ export default function AboutPage() {
                   style={{ backgroundColor: '#E9D5FF' }}
                 >
                   <img
-                    src={profileImage}
+                    src={image_6f8c5edaeb740b731193dba29ca1e221e355cd7d}
                     alt="Pranav Raval"
                     className="w-full h-full object-cover object-top scale-105"
                   />

@@ -44,6 +44,7 @@
         'figma:asset/a4011df200111b3cb1c96b782dc30867062b9830.png': path.resolve(__dirname, './src/assets/a4011df200111b3cb1c96b782dc30867062b9830.png'),
         'figma:asset/a060d1c28b8b5de90cc4c5a29216adbc2baac19b.png': path.resolve(__dirname, './src/assets/a060d1c28b8b5de90cc4c5a29216adbc2baac19b.png'),
         'figma:asset/9a43b22ede26fc432748e089d29481e88a8c34a6.png': path.resolve(__dirname, './src/assets/9a43b22ede26fc432748e089d29481e88a8c34a6.png'),
+        'figma:asset/90036b3d4e35827bb543b4c21a8b9051fe219878.png': path.resolve(__dirname, './src/assets/90036b3d4e35827bb543b4c21a8b9051fe219878.png'),
         'figma:asset/8b78dc8d30d5be297c5d241ddeaddcc9027ef912.png': path.resolve(__dirname, './src/assets/8b78dc8d30d5be297c5d241ddeaddcc9027ef912.png'),
         'figma:asset/82fcee449bd2fffbe283c3ae2623fda8955cf920.png': path.resolve(__dirname, './src/assets/82fcee449bd2fffbe283c3ae2623fda8955cf920.png'),
         'figma:asset/8115461f29605560b8b9d65a1981550e82551d6a.png': path.resolve(__dirname, './src/assets/8115461f29605560b8b9d65a1981550e82551d6a.png'),

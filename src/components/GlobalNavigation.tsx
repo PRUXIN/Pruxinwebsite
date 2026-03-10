@@ -59,7 +59,7 @@ export default function GlobalNavigation() {
                     to={link.href}
                     className="relative ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-full transition-all duration-200"
                     style={{
-                      background: isActive ? 'var(--color-clara-accent)' : 'color-mix(in srgb, var(--color-clara-accent) 12%, transparent)',
+                      background: isActive ? 'var(--color-clara-accent)' : 'rgba(20, 184, 166, 0.12)',
                       color: isActive ? '#fff' : '#0D9488',
                       border: '1px solid rgba(20,184,166,0.7)',
                     }}

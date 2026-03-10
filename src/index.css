@@ -824,6 +824,10 @@
     height: 3px;
   }
 
+  .h-\[30\%\] {
+    height: 30%;
+  }
+
   .h-\[36px\] {
     height: 36px;
   }
@@ -1987,6 +1991,10 @@
     object-fit: cover;
   }
 
+  .object-center {
+    object-position: center;
+  }
+
   .object-top {
     object-position: top;
   }
@@ -2175,10 +2183,6 @@
     padding-top: 120px;
   }
 
-  .pt-\[130px\] {
-    padding-top: 130px;
-  }
-
   .pt-\[140px\] {
     padding-top: 140px;
   }
@@ -2307,6 +2311,10 @@
 
   .text-\[clamp\(36px\,6vw\,64px\)\] {
     font-size: clamp(36px, 6vw, 64px);
+  }
+
+  .text-\[clamp\(40px\,6vw\,72px\)\] {
+    font-size: clamp(40px, 6vw, 72px);
   }
 
   .text-\[clamp\(40px\,7vw\,80px\)\] {
@@ -3215,6 +3223,12 @@
     }
   }
 
+  @media (width >= 40rem) {
+    .sm\:px-10 {
+      padding-inline: calc(var(--spacing) * 10);
+    }
+  }
+
   @media (width >= 48rem) {
     .md\:right-5 {
       right: calc(var(--spacing) * 5);
@@ -3395,6 +3409,12 @@
   @media (width >= 64rem) {
     .lg\:flex-row {
       flex-direction: row;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:px-16 {
+      padding-inline: calc(var(--spacing) * 16);
     }
   }
 }
