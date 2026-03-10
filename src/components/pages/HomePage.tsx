@@ -25,7 +25,7 @@ export default function HomePage() {
       meta.name = 'description';
       document.head.appendChild(meta);
     }
-    meta.setAttribute('content', 'PRUXIN helps SaaS founders reduce friction, simplify flows, and turn confused users into active ones. UX audits, product design, and AI automation.');
+    meta.setAttribute('content', 'PRUXIN helps professional service businesses stop losing clients to missed calls and unclear experiences. Clara, our AI receptionist, answers every call automatically.');
   }, []);
 
   // Step 3 — Services: AI Automation leads, UX Audits second, Product Design third
@@ -112,7 +112,7 @@ export default function HomePage() {
           >
             <Sparkles size={14} className="text-amber-400" />
             <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-white/90">
-              AI Automation + UX Design
+              AI Voice Receptionist — Live on UK Number
             </span>
           </motion.div>
 
@@ -123,8 +123,8 @@ export default function HomePage() {
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white"
           >
-            I help UK businesses stop losing leads
-            <br className="hidden md:block" /> and start converting them.
+            Your next client called today.
+            <br className="hidden md:block" /> No one answered.
           </motion.h1>
 
           {/* Subheading */}
@@ -134,7 +134,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="type-body-large text-white/55 mb-14 max-w-2xl"
           >
-            AI workflows that answer calls and qualify leads. UX design that turns confused users into active ones. Both built on one principle — clarity in every click.
+            Clara is your AI receptionist. She answers every call, qualifies the enquiry, and books the appointment — while you're doing the work that matters.
           </motion.p>
 
           {/* Single CTA only — "See how it works" → /clara */}
@@ -229,16 +229,16 @@ export default function HomePage() {
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
                 <span className="text-[13px] font-medium tracking-wide" style={{ color: '#14B8A6' }}>
-                  Featured — AI Voice Receptionist
+                  Live now — answering real calls
                 </span>
               </motion.div>
 
               <RevealOnScroll direction="left">
                 <h2 className="text-[clamp(32px,5vw,60px)] font-bold text-white leading-[1.05] mb-5 tracking-tight">
-                  Meet Clara. Your AI receptionist<br />is live right now.
+                  Most missed calls don't go to voicemail.<br />They go to your competitor.
                 </h2>
                 <p className="text-[17px] text-white/55 leading-relaxed mb-8 max-w-[440px]">
-                  Clara answers every inbound call, qualifies the lead, and books the discovery call — automatically. Built on real AI. Running on a live UK number. Proven in PRUXIN's own business first.
+                  Clara answers instantly, every time. Real conversation — no phone trees, no scripts. She qualifies the lead and books directly into your calendar. Automatically. While you're with a client.
                 </p>
 
                 {/* Single CTA only — phone call */}
@@ -254,7 +254,7 @@ export default function HomePage() {
                 </div>
 
                 <p className="text-white/25 text-[13px]">
-                  UK number · Call logs included · No voicemail · Real call, no forms
+                  UK number · Books into your calendar · No voicemail · Real conversation, not a bot
                 </p>
               </RevealOnScroll>
             </div>
@@ -355,17 +355,15 @@ export default function HomePage() {
 
             <RevealOnScroll delay={0.2} direction="right">
               <p className="type-body-large text-[var(--color-gray-700)] mb-6">
-                I'm Pranav, a product and UX designer specialising in SaaS products, compliance-heavy
-                systems, and trust-first marketplaces.
+                I'm Pranav. I spent 7 years in technical support watching businesses lose clients to problems nobody was measuring —
+                missed calls, unclear processes, friction that lived between the cracks.
               </p>
               <p className="type-body-medium text-[var(--color-gray-600)] mb-6">
-                If your product has high drop-off, messy dashboards, or unclear onboarding — I fix
-                that. My approach: reduce clicks, remove confusion, and design systems that work
-                without constant support tickets.
+                Clara is the fix for the most common one. PRUXIN is the fix for everything else.
               </p>
               <p className="type-body-medium text-[var(--color-gray-600)]">
-                I spent years in technical support at Siemens, Atos, and Microsoft. That taught me one
-                thing: support tickets aren't user problems — they're design problems.
+                Seven years in technical support at Siemens, Atos, and Microsoft taught me one
+                thing: most business problems aren't user problems — they're clarity problems.
               </p>
             </RevealOnScroll>
           </div>
@@ -381,13 +379,13 @@ export default function HomePage() {
         <div className="max-w-[1280px] mx-auto">
           <RevealOnScroll>
             <p className="type-label text-[var(--color-gray-500)] text-center mb-3 uppercase tracking-[0.12em]">
-              What PRUXIN does
+              Built by PRUXIN. Proven on our own business first.
             </p>
             <h2 className="type-display-small text-[var(--color-black)] text-center mb-4">
-              Two things. Done with clarity.
+              Clara isn't something we sell without using.
             </h2>
             <p className="type-body-large text-[var(--color-gray-500)] text-center mb-16 max-w-xl mx-auto">
-              AI automation that removes manual work. UX design that removes confusion.
+              It runs PRUXIN's own inbound calls. Every feature was tested on real enquiries before it reached a single client. We also help businesses fix the digital experiences that cost them clients — unclear websites, confusing booking flows, broken onboarding. But Clara is where we start.
             </p>
           </RevealOnScroll>
 

@@ -1214,16 +1214,16 @@
     gap: 3px;
   }
 
-  :where(.space-y-0 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
   :where(.space-y-2\.5 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  :where(.space-y-3 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-3\.5 > :not(:last-child)) {
@@ -2078,10 +2078,6 @@
     padding-block: calc(var(--spacing) * 24);
   }
 
-  .py-\[6px\] {
-    padding-block: 6px;
-  }
-
   .py-\[12px\] {
     padding-block: 12px;
   }
@@ -2224,8 +2220,8 @@
     font-size: 28px;
   }
 
-  .text-\[40px\] {
-    font-size: 40px;
+  .text-\[36px\] {
+    font-size: 36px;
   }
 
   .text-\[48px\] {
@@ -2345,10 +2341,6 @@
 
   .text-\[\#34c759\] {
     color: #34c759;
-  }
-
-  .text-\[\#d1d1d6\] {
-    color: #d1d1d6;
   }
 
   .text-\[var\(--color-black\)\] {

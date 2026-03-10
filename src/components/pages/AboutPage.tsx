@@ -103,12 +103,10 @@ export default function AboutPage() {
 
           <RevealOnScroll delay={0.15} direction="right">
             <p className="type-body-large text-[var(--color-gray-700)] mb-6">
-              I'm Pranav Raval — a product and UX designer based in the UK, specialising in
-              clarity-first design for SaaS products, marketplaces, and compliance-heavy systems.
+              I'm Pranav Raval — a product and UX designer based in Glasgow. I help businesses remove the friction that quietly costs them clients. That's PRUXIN. That's Clara.
             </p>
             <p className="type-body-medium text-[var(--color-gray-600)]">
-              I help SaaS founders and product teams remove friction, simplify flows, and design
-              systems that work without constant support tickets.
+              Seven years in technical support taught me that most business problems aren't user problems — they're clarity problems. PRUXIN exists to fix that.
             </p>
           </RevealOnScroll>
         </div>
@@ -159,6 +157,12 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={0.3}>
+            <p className="type-body-medium text-[var(--color-gray-600)] mt-8">
+              Clara came from that same thinking. The most common symptom I kept seeing in professional service businesses wasn't a website problem — it was a missed call problem. So we built the fix.
+            </p>
           </RevealOnScroll>
         </div>
       </section>
@@ -288,8 +292,7 @@ export default function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <p className="type-body-large text-[var(--color-gray-600)] mb-10">
-              If you're building a SaaS product, marketplace, or compliance-heavy system and need help
-              reducing friction — let's talk.
+              If clients are slipping through the cracks — because of a missed call, a confusing process, or an unclear product — let's talk.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>

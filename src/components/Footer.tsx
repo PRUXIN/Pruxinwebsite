@@ -52,7 +52,7 @@ export default function Footer() {
               <img src={pruxinLogo} alt="PRUXIN" className="h-7 w-auto transition-transform group-hover:scale-105" />
             </Link>
             <p className="type-body-small text-slate-400 max-w-xs">
-              Clarity-first UX design for SaaS products, marketplaces, and compliance-heavy systems.
+              AI automation and clarity-first design. Built for businesses that can't afford to lose a client to a missed call or a confusing experience.
             </p>
           </div>
 

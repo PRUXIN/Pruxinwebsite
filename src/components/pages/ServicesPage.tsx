@@ -112,7 +112,7 @@ export default function ServicesPage() {
       meta.name = 'description';
       document.head.appendChild(meta);
     }
-    meta.setAttribute('content', 'PRUXIN services: SaaS UX audits, end-to-end product design, and AI voice automation. Clarity-first. Delivery-focused.');
+    meta.setAttribute('content', 'PRUXIN helps businesses fix the clarity problems that cost them clients. UX audits, product design, flow simplification — and Clara, our AI voice receptionist.');
     return () => { document.title = 'PRUXIN | Clarity-First UX Design for SaaS & Enterprise'; };
   }, []);
 
@@ -142,8 +142,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="type-body-large text-[var(--color-gray-600)] max-w-2xl mx-auto"
           >
-            I help SaaS teams identify friction, simplify flows, and design products that work
-            without constant support tickets.
+            Most businesses don't have a growth problem. They have a clarity problem. Missed calls, confusing websites, unclear flows — they quietly cost you clients every single day. PRUXIN fixes that.
           </motion.p>
         </div>
       </section>
@@ -156,7 +155,7 @@ export default function ServicesPage() {
         iconBg="from-blue-500/15 to-cyan-400/5"
         accentColor="#2563EB"
         checkColor="#2563EB"
-        description="I audit SaaS products to identify where users get stuck, confused, or abandon the flow. You get a detailed report with friction points, prioritised fixes, and clear recommendations."
+        description="Something in your product or process is costing you clients. You can feel it — in support calls, drop-offs, and confused users. An audit finds exactly what to fix first, with clear business impact against each item."
         items={[
           'Click-by-click flow analysis',
           'Friction heatmap showing drop-off points',
@@ -165,7 +164,7 @@ export default function ServicesPage() {
           'Prioritised fix list (quick wins vs long-term improvements)',
         ]}
         whoTitle="Who it's for"
-        whoDescription="SaaS founders and product teams who see high drop-off rates, unclear onboarding, or too many support tickets about 'how do I...?' questions."
+        whoDescription="Professional service businesses, SMBs, and software-led companies who know something is off but need clarity on what to fix and in what order."
         engagement="1–2 weeks from audit to delivery"
       />
 
@@ -178,7 +177,7 @@ export default function ServicesPage() {
         accentColor="#7C3AED"
         checkColor="#7C3AED"
         bgClass="bg-[var(--color-gray-50)]"
-        description="Full-cycle UX and product design for SaaS, marketplaces, and compliance-heavy systems. From research to delivery-ready designs."
+        description="Building without a clarity-first foundation is expensive. Every confusing screen becomes a support call. Every unclear flow becomes a lost client. Full-cycle UX and product design from research to delivery-ready Figma files."
         items={[
           'Onboarding flows that activate users faster',
           'Dashboards that prioritise what matters',
@@ -188,7 +187,7 @@ export default function ServicesPage() {
           'Reducing clicks without losing functionality',
         ]}
         whoTitle="Who it's for"
-        whoDescription="SaaS founders building new products or redesigning existing ones. Product teams in fintech, edtech, and compliance-heavy industries."
+        whoDescription="Businesses building or redesigning a digital product — from SaaS platforms to client-facing portals, booking systems, and professional service tools."
         engagement="4–8 weeks depending on scope"
         extra={
           <div className="mb-8">
@@ -220,7 +219,7 @@ export default function ServicesPage() {
         iconBg="from-teal-500/15 to-emerald-400/5"
         accentColor="#0D9488"
         checkColor="#0D9488"
-        description="If your product feels cluttered, has too many steps, or users complain about confusion — I streamline it. Clear defaults, obvious next steps, fewer choices."
+        description="Your clients aren't confused because they're not smart enough. The path isn't clear. That's a design problem — and it's faster to fix than you think. Clear defaults, obvious next steps, fewer choices."
         items={[
           'Remove unnecessary clicks',
           'Simplify decision trees',
@@ -229,7 +228,7 @@ export default function ServicesPage() {
           'Design clear defaults that work for 80% of users',
         ]}
         whoTitle="Who it's for"
-        whoDescription="Products that work but feel complicated. Teams getting feedback like 'I don't know what to do next' or 'This is confusing.'"
+        whoDescription="Any business where clients regularly ask 'how do I...' — or where your team spends time explaining what the product or process should make obvious."
         engagement="2–4 weeks"
       />
 
@@ -246,13 +245,12 @@ export default function ServicesPage() {
         <div className="max-w-[640px] mx-auto relative z-10">
           <RevealOnScroll>
             <h2 className="type-headline-large text-[var(--color-black)] mb-6">
-              Not sure which service you need?
+              Not sure where to start?
             </h2>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <p className="type-body-large text-[var(--color-gray-600)] mb-10">
-              Let's talk. I'll help you figure out whether you need a full audit, a redesign, or just
-              targeted flow improvements.
+              AI tools will give you 40 things to fix. PRUXIN tells you which 3 actually cost you clients — and how to fix them first. Let's talk.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
