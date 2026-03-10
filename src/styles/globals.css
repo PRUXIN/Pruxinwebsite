@@ -64,6 +64,25 @@
   --radius-lg: 28px;
   --radius-xl: 32px;
   --radius-full: 9999px;
+
+  /* ── PRUXIN Brand Tokens ── */
+  /* Primitives */
+  --brand-blue:        #3B82F6;
+  --brand-purple:      #7C3AED;
+  --brand-cyan:        #06B6D4;
+  --brand-clara:       #14B8A6;
+  --brand-dark:        #0F172A;
+
+  /* Semantic */
+  --color-brand-primary:        var(--brand-blue);
+  --color-brand-gradient-start: var(--brand-blue);
+  --color-brand-gradient-end:   var(--brand-purple);
+  --color-clara-accent:         var(--brand-clara);
+  --color-surface-dark:         var(--brand-dark);
+
+  /* Gradient shorthands */
+  --gradient-brand: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+  --gradient-animated-border: linear-gradient(90deg, var(--brand-blue), var(--brand-purple), var(--brand-cyan));
 }
 
 @layer base {

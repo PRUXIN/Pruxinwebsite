@@ -14,7 +14,7 @@ import {
 const PAGE_TITLE = 'Clara — AI Voice Receptionist for UK Businesses | PRUXIN';
 const PAGE_META_DESC = 'Clara answers every inbound call, qualifies your leads, and books discovery calls automatically. No voicemail. No missed leads. Call +44 131 381 5821 and hear her in action.';
 
-const AQUA = '#14B8A6';
+const AQUA = 'var(--color-clara-accent)';
 const AQUA_DIM = 'rgba(20,184,166,0.12)';
 const AQUA_GLOW = 'rgba(20,184,166,0.25)';
 const DARK_BG = '#060B14';

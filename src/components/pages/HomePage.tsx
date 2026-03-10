@@ -79,7 +79,7 @@ export default function HomePage() {
       >
         {/* Gradient Mesh Background */}
         <div className="absolute inset-0 z-0" style={{
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 30%, #0F172A 50%, #0C2233 70%, #0F172A 100%)',
+          background: 'linear-gradient(135deg, var(--color-surface-dark) 0%, #1E1B4B 30%, var(--color-surface-dark) 50%, #0C2233 70%, var(--color-surface-dark) 100%)',
         }} />
 
         {/* Animated gradient blobs */}
@@ -224,11 +224,11 @@ export default function HomePage() {
               >
                 <motion.span
                   className="w-2 h-2 rounded-full"
-                  style={{ background: '#14B8A6' }}
+                  style={{ background: 'var(--color-clara-accent)' }}
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
-                <span className="text-[13px] font-medium tracking-wide" style={{ color: '#14B8A6' }}>
+                <span className="text-[13px] font-medium tracking-wide" style={{ color: 'var(--color-clara-accent)' }}>
                   Live now — answering real calls
                 </span>
               </motion.div>
@@ -246,7 +246,7 @@ export default function HomePage() {
                   <a
                     href="tel:+441313815821"
                     className="inline-flex items-center gap-2.5 h-[52px] px-8 rounded-full font-semibold text-[16px] text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(20,184,166,0.4)]"
-                    style={{ background: '#14B8A6' }}
+                    style={{ background: 'var(--color-clara-accent)' }}
                   >
                     <Phone size={17} />
                     Call +44 131 381 5821
@@ -265,13 +265,13 @@ export default function HomePage() {
                 className="rounded-[24px] p-8 md:p-10 text-center"
                 style={{ background: 'rgba(20,184,166,0.07)', border: '1px solid rgba(20,184,166,0.20)' }}
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: '#14B8A6' }}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: 'var(--color-clara-accent)' }}>
                   Live demo line
                 </p>
                 <a
                   href="tel:+441313815821"
                   className="block text-[clamp(28px,4vw,44px)] font-bold mb-4 leading-tight tracking-tight hover:opacity-70 transition-opacity"
-                  style={{ color: '#14B8A6' }}
+                  style={{ color: 'var(--color-clara-accent)' }}
                 >
                   +44 131 381 5821
                 </a>
@@ -281,7 +281,7 @@ export default function HomePage() {
                     <motion.div
                       key={i}
                       className="w-[3px] rounded-full"
-                      style={{ background: '#14B8A6' }}
+                      style={{ background: 'var(--color-clara-accent)' }}
                       animate={{ scaleY: [h * 0.5, h, h * 0.3, h * 0.8, h * 0.5] }}
                       transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.1, ease: 'easeInOut' }}
                     />
@@ -398,8 +398,8 @@ export default function HomePage() {
                     service.title === 'AI Automation Workflows'
                       ? '#0D948822'
                       : service.title === 'UX Audits'
-                      ? '#2563EB22'
-                      : '#7C3AED22'
+                      ? 'color-mix(in srgb, var(--color-brand-primary) 13%, transparent)'
+                      : 'color-mix(in srgb, var(--brand-purple) 13%, transparent)'
                   }
                   gradientSize={300}
                 >

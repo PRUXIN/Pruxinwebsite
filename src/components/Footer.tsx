@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import { Linkedin, Instagram, Facebook, Mail, Youtube, Music, Phone } from 'lucide-react';
 import pruxinLogo from 'figma:asset/ed230e65ec8d7b6452e7e9e65ae016b014fa4be0.png';
 
@@ -27,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer className="relative py-16 px-6 text-white overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #0F172A 0%, #020617 100%)' }}
+      style={{ background: 'linear-gradient(180deg, var(--color-surface-dark) 0%, #020617 100%)' }}
     >
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -39,7 +38,7 @@ export default function Footer() {
       {/* Top gradient line */}
       <div className="absolute top-0 left-0 right-0 h-px animate-gradient-x"
         style={{
-          background: 'linear-gradient(90deg, transparent 10%, #2563EB 30%, #7C3AED 50%, #06B6D4 70%, transparent 90%)',
+          background: 'var(--gradient-animated-border)',
           backgroundSize: '200% 100%',
         }}
       />
@@ -48,9 +47,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="block mb-4 group">
+            <a href="/" className="block mb-4 group">
               <img src={pruxinLogo} alt="PRUXIN" className="h-7 w-auto transition-transform group-hover:scale-105" />
-            </Link>
+            </a>
             <p className="type-body-small text-slate-400 max-w-xs">
               AI automation and clarity-first design. Built for businesses that can't afford to lose a client to a missed call or a confusing experience.
             </p>
@@ -61,14 +60,14 @@ export default function Footer() {
             <p className="type-label text-slate-500 mb-4">Navigation</p>
             <div className="flex flex-col gap-2.5">
               {footerLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className="type-body-small text-slate-400 hover:text-white transition-colors relative w-fit group"
                 >
                   {link.name}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>

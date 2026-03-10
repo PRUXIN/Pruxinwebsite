@@ -1,14 +1,22 @@
 import image_158a51c794328aa68369a8c3dca9f94b3c81a32d from 'figma:asset/158a51c794328aa68369a8c3dca9f94b3c81a32d.png'
 import image_ed230e65ec8d7b6452e7e9e65ae016b014fa4be0 from 'figma:asset/ed230e65ec8d7b6452e7e9e65ae016b014fa4be0.png'
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router';
+import { useSafeLocation } from './useSafeLocation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+// Use plain <a> tags throughout so this component renders safely even when
+// Figma Make previews it outside a RouterProvider context. React Router's
+// client-side navigation still works because the browser follows href links
+// and the SPA router intercepts them at the top level.
+
 export default function GlobalNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const isDarkPage = location.pathname === '/' || location.pathname === '/clara' || location.pathname === '/projects';
+  const location = useSafeLocation();
+  const isDarkPage =
+    location.pathname === '/' ||
+    location.pathname === '/clara' ||
+    location.pathname === '/projects';
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -38,15 +46,19 @@ export default function GlobalNavigation() {
       >
         <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <a href="/" className="flex items-center group">
             <motion.img
-              src={isDarkPage ? image_ed230e65ec8d7b6452e7e9e65ae016b014fa4be0 : image_158a51c794328aa68369a8c3dca9f94b3c81a32d}
+              src={
+                isDarkPage
+                  ? image_ed230e65ec8d7b6452e7e9e65ae016b014fa4be0
+                  : image_158a51c794328aa68369a8c3dca9f94b3c81a32d
+              }
               alt="PRUXIN"
               className="h-7 w-auto transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400 }}
             />
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
@@ -54,24 +66,26 @@ export default function GlobalNavigation() {
               const isActive = location.pathname === link.href;
               if ((link as any).accent) {
                 return (
-                  <Link
+                  <a
                     key={link.name}
-                    to={link.href}
+                    href={link.href}
                     className="relative ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-full transition-all duration-200"
                     style={{
-                      background: isActive ? '#14B8A6' : 'rgba(20,184,166,0.12)',
+                      background: isActive
+                        ? 'var(--color-clara-accent)'
+                        : 'color-mix(in srgb, var(--color-clara-accent) 12%, transparent)',
                       color: isActive ? '#fff' : '#0D9488',
                       border: '1px solid rgba(20,184,166,0.7)',
                     }}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 );
               }
               return (
-                <Link
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className={`relative px-3.5 py-2 text-[14px] font-medium transition-colors duration-200 rounded-lg ${
                     useDarkText
                       ? isActive
@@ -89,21 +103,21 @@ export default function GlobalNavigation() {
                       className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full"
                       style={{
                         background: useDarkText
-                          ? 'linear-gradient(90deg, #2563EB, #7C3AED)'
+                          ? 'var(--gradient-brand)'
                           : 'linear-gradient(90deg, #93C5FD, #C4B5FD)',
                       }}
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
-                </Link>
+                </a>
               );
             })}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className={`relative inline-flex items-center justify-center h-[36px] px-5 text-[14px] font-medium rounded-full transition-all duration-300 overflow-hidden group ${
                 useDarkText
                   ? 'bg-[var(--color-black)] text-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
@@ -112,7 +126,7 @@ export default function GlobalNavigation() {
             >
               <span className="relative z-10">Get a UX Audit</span>
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -145,18 +159,22 @@ export default function GlobalNavigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className={`block text-[28px] font-semibold py-2 transition-colors ${
                       location.pathname === link.href
-                        ? (link as any).accent ? '' : 'gradient-text-blue-purple'
-                        : (link as any).accent ? '' : 'text-[var(--color-black)]'
+                        ? (link as any).accent
+                          ? ''
+                          : 'gradient-text-blue-purple'
+                        : (link as any).accent
+                          ? ''
+                          : 'text-[var(--color-black)]'
                     }`}
-                    style={(link as any).accent ? { color: '#14B8A6' } : {}}
+                    style={(link as any).accent ? { color: 'var(--color-clara-accent)' } : {}}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
               <motion.div
@@ -164,14 +182,14 @@ export default function GlobalNavigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.4 }}
               >
-                <Link
-                  to="/contact"
+                <a
+                  href="/contact"
                   className="inline-flex items-center justify-center h-[56px] w-full bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full mt-6 relative overflow-hidden group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="relative z-10">Get a UX Audit</span>
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>
