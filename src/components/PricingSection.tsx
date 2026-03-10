@@ -94,7 +94,7 @@ const ADDONS = [
     price: "£29/mo",
     description: "Hosting and support combined — one plan, best value",
     badge: "Best Value",
-    badgeColor: "var(--color-clara-accent)",
+    badgeColor: "#14B8A6",
   },
   {
     id: "logo",

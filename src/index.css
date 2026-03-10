@@ -456,10 +456,6 @@
     position: relative;
   }
 
-  .static {
-    position: static;
-  }
-
   .sticky {
     position: sticky;
   }
@@ -2077,6 +2073,10 @@
 
   .px-\[16px\] {
     padding-inline: 16px;
+  }
+
+  .px-\[20px\] {
+    padding-inline: 20px;
   }
 
   .px-\[24px\] {

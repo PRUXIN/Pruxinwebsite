@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router';
-import { useSafeLocation } from './useSafeLocation';
+import { Outlet, useLocation } from 'react-router';
 import GlobalNavigation from './GlobalNavigation';
 import Footer from './Footer';
 import { ScrollProgress } from './ui/effects';
 
 export default function Layout() {
-  const location = useSafeLocation();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
