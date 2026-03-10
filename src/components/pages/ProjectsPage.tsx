@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, Eye, ExternalLink } from 'lucide-react';
@@ -674,6 +674,7 @@ export default function ProjectsPage() {
   const [lightboxProject, setLightboxProject] = useState<Project | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [filterStuck, setFilterStuck] = useState(false);
+  const projectsGridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -749,7 +750,7 @@ export default function ProjectsPage() {
         className={`sticky top-[64px] z-40 transition-all duration-300 ${
           filterStuck
             ? 'bg-black/20 backdrop-blur-xl border-b border-white/10'
-            : 'bg-transparent border-b border-transparent'
+            : 'bg-[var(--color-gray-50)] border-b border-transparent'
         }`}
         style={{ boxShadow: '0 1px 12px rgba(0,0,0,0.04)' }}>
         <div className="max-w-[1100px] mx-auto px-6 py-4">
@@ -763,7 +764,12 @@ export default function ProjectsPage() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setActiveFilter(cat)}
+                  onClick={() => {
+                    setActiveFilter(cat);
+                    setTimeout(() => {
+                      projectsGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
+                  }}
                   className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-200"
                   style={{
                     background: active ? '#1d1d1f' : '#F5F5F7',
@@ -789,7 +795,7 @@ export default function ProjectsPage() {
 
       {/* ── Project Cards ── */}
       <section className="py-14 px-6 bg-[var(--color-gray-50)]">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1100px] mx-auto" ref={projectsGridRef}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeFilter}
