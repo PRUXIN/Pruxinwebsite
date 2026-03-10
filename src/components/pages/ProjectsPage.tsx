@@ -2,24 +2,23 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, Eye, ExternalLink } from 'lucide-react';
-import { useSwipeable } from 'react-swipeable';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { RevealOnScroll, MagneticWrap } from '../ui/effects';
 
 // ─── Threecolts HUB real screenshots ─────────────────────────────────────────
 import hubImg1 from 'figma:asset/bc3f84889b5aefc773df5d8e78faaa3042836ba8.png';
-import hubImg2 from 'figma:asset/a811de27699ad1ae1920285e81c9d8868fc2e249.png';
-import hubImg3 from 'figma:asset/5563cc8977f651420485837644ab270649421a4a.png';
-import hubImg4 from 'figma:asset/8b78dc8d30d5be297c5d241ddeaddcc9027ef912.png';
+const hubImg2 = 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTYWFTJTIwZGFzaGJvYXJkJTIwYXN0JTIwY29uc3VtZXJzJTIwY29udHJvbCBwYW5lbCUyMGRhcmt8ZW58MXx8fHwxNzczMTUzMDA4fDA&ixlib=rb-4.1.0&q=80&w=1080';
+const hubImg3 = 'https://images.unsplash.com/photo-1631006732121-a6da2f4864d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMHNldHRpbmdzJTIwcGFuZWwlMjBhZG1pbiUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzMxNTMwMDh8MA&ixlib=rb-4.1.0&q=80&w=1080';
+const hubImg4 = 'https://images.unsplash.com/photo-1735825764457-ffdf0b5aa5dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnZvaWNlJTIwcGF5bWVudCUyMGJ1c2luZXNzJTIwZmluYW5jZSUyMHNvZnR3YXJlfGVufDF8fHx8MTc3MzE1MzAxNHww&ixlib=rb-4.1.0&q=80&w=1080';
 
 // ─── Threecolts BOB real screenshots ─────────────────────────────────────────
-import bobImg1 from 'figma:asset/a5f9cf63a521169249094092fab3517f9b1e8f78.png';
-import bobImg2 from 'figma:asset/e56e91aaff2c31bf21ad75964cbf20eb064ea88d.png';
-import bobImg3 from 'figma:asset/96bdefe88c9c857d0d00c812415b79c52fe0a5ba.png';
-import bobImg4 from 'figma:asset/c4a3f3d1ac5f7b9efd2d7611eede3a44e9298d2f.png';
+const bobImg1 = 'https://images.unsplash.com/photo-1588201989301-73f106507395?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2UlMjBhZG1pbiUyMHNlYXJjaCUyMHBvcnRhbCUyMGRhcmt8ZW58MXx8fHwxNzczMTUzMDA5fDA&ixlib=rb-4.1.0&q=80&w=1080';
+const bobImg2 = 'https://images.unsplash.com/photo-1762330467019-f38839ad4b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFyY2glMjByZXN1bHRzJTIwZGF0YWJhc2UlMjBsb29rdXAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczMTUzMDE1fDA&ixlib=rb-4.1.0&q=80&w=1080';
+const bobImg3 = 'https://images.unsplash.com/photo-1750816204148-5d02aff367cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZG1pbiUyMHBvcnRhbCUyMGFjY291bnQlMjBwcm9maWxlJTIwcmVjb3Jkc3xlbnwxfHx8fDE3NzMxNTMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080';
+const bobImg4 = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ2VuY3klMjBtdWx0aS1jbGllbnQlMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBvdmVydmlld3xlbnwxfHx8fDE3NzMxNTMwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080';
 
 // ─── Threecolts Agency Portal real screenshot ─────────────────────────────────
-import agencyImg1 from 'figma:asset/39bbb16d1f913fbb272604a03289fcbe744062e5.png';
+const agencyImg1 = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ2VuY3klMjBtdWx0aS1jbGllbnQlMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBvdmVydmlld3xlbnwxfHx8fDE3NzMxNTMwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -279,7 +278,12 @@ function Lightbox({ project, startIndex, onClose }: LightboxProps) {
     active?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [idx]);
 
-  const swipe = useSwipeable({ onSwipedLeft: next, onSwipedRight: prev, trackMouse: false });
+  const touchStartX = useRef<number>(0);
+  const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) { delta > 0 ? next() : prev(); }
+  };
 
   return (
     <motion.div
@@ -331,7 +335,8 @@ function Lightbox({ project, startIndex, onClose }: LightboxProps) {
 
       {/* ── Main image ── */}
       <div
-        {...swipe}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         className="flex-1 relative flex items-center justify-center px-16 md:px-24 min-h-0"
         onClick={(e) => e.stopPropagation()}
       >

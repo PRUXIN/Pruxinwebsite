@@ -1,9 +1,10 @@
+import image_71460eb4c9886059928cf6f61925e4d86b519508 from 'figma:asset/71460eb4c9886059928cf6f61925e4d86b519508.png'
+import image_a4011df200111b3cb1c96b782dc30867062b9830 from 'figma:asset/a4011df200111b3cb1c96b782dc30867062b9830.png'
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ChevronDown, ClipboardCheck, Layers, ArrowRight, Workflow, Sparkles, Phone, Zap } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
-import profileImage from 'figma:asset/d4d9a5fd9aff0e363729e74bd4b4f829bf50730c.png';
 import hubFeaturedImg from 'figma:asset/bc3f84889b5aefc773df5d8e78faaa3042836ba8.png';
 import { MagicCard } from '../magicui/magic-card';
 import {
@@ -15,6 +16,8 @@ import {
   StaggerItem,
   AnimatedCounter,
 } from '../ui/effects';
+
+const profileImage = 'https://images.unsplash.com/photo-1622169804256-0eb6873ff441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdCUyMGhlYWRzaG90JTIwY29uc3VsdGFudHxlbnwxfHx8fDE3NzMxNTMwMDd8MA&ixlib=rb-4.1.0&q=80&w=1080';
 
 export default function HomePage() {
   useEffect(() => {
@@ -327,7 +330,7 @@ export default function HomePage() {
                     style={{ backgroundColor: '#E9D5FF' }}
                   >
                     <img
-                      src={profileImage}
+                      src={image_71460eb4c9886059928cf6f61925e4d86b519508}
                       alt="Pranav Raval"
                       className="w-full h-full object-cover object-top scale-110 translate-y-4"
                     />

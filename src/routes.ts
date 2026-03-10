@@ -1,13 +1,15 @@
 import { createBrowserRouter } from "react-router";
-import Layout from "./components/Layout";
-import HomePage from "./components/pages/HomePage";
-import ServicesPage from "./components/pages/ServicesPage";
-import ProjectsPage from "./components/pages/ProjectsPage";
-import AboutPage from "./components/pages/AboutPage";
-import ContactPage from "./components/pages/ContactPage";
-import ContentPage from "./components/pages/ContentPage";
-import ClaraPage from "./components/pages/ClaraPage";
-import PrivacyPage from "./components/pages/PrivacyPage";
+import React from "react";
+
+const Layout = React.lazy(() => import("./components/Layout"));
+const HomePage = React.lazy(() => import("./components/pages/HomePage"));
+const ServicesPage = React.lazy(() => import("./components/pages/ServicesPage"));
+const ProjectsPage = React.lazy(() => import("./components/pages/ProjectsPage"));
+const AboutPage = React.lazy(() => import("./components/pages/AboutPage"));
+const ContactPage = React.lazy(() => import("./components/pages/ContactPage"));
+const ContentPage = React.lazy(() => import("./components/pages/ContentPage"));
+const ClaraPage = React.lazy(() => import("./components/pages/ClaraPage"));
+const PrivacyPage = React.lazy(() => import("./components/pages/PrivacyPage"));
 
 export const router = createBrowserRouter([
   {
