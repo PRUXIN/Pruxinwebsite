@@ -11,6 +11,23 @@ const ContentPage = React.lazy(() => import("./components/pages/ContentPage"));
 const ClaraPage = React.lazy(() => import("./components/pages/ClaraPage"));
 const PrivacyPage = React.lazy(() => import("./components/pages/PrivacyPage"));
 
+function NotFound() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="type-display-small text-[var(--color-black)] mb-4">404</h1>
+        <p className="type-body-large text-[var(--color-gray-600)] mb-8">Page not found</p>
+        <a
+          href="/"
+          className="inline-flex items-center justify-center h-[48px] px-8 bg-[var(--color-black)] text-white text-[16px] font-medium rounded-full hover:bg-[#1A1A1A] transition-colors"
+        >
+          Go Home
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,22 +41,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
       { path: "clara", Component: ClaraPage },
       { path: "privacy", Component: PrivacyPage },
-      {
-        path: "*",
-        Component: () => {
-          return (
-            <div className="min-h-[60vh] flex items-center justify-center">
-              <div className="text-center">
-                <h1 className="type-display-small text-[var(--color-black)] mb-4">404</h1>
-                <p className="type-body-large text-[var(--color-gray-600)] mb-8">Page not found</p>
-                <a href="/" className="inline-flex items-center justify-center h-[48px] px-8 bg-[var(--color-black)] text-white text-[16px] font-medium rounded-full hover:bg-[#1A1A1A] transition-colors">
-                  Go Home
-                </a>
-              </div>
-            </div>
-          );
-        },
-      },
+      { path: "*", Component: NotFound },
     ],
   },
 ]);
