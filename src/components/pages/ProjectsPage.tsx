@@ -673,16 +673,7 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightboxProject, setLightboxProject] = useState<Project | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [filterStuck, setFilterStuck] = useState(false);
   const projectsGridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setFilterStuck(window.scrollY >= 200);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Only show projects where visible !== false
   const VISIBLE_PROJECTS = PROJECTS.filter((p) => p.visible !== false);
@@ -700,7 +691,8 @@ export default function ProjectsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pt-[140px] pb-[72px] px-6 bg-[var(--color-gray-50)] relative overflow-hidden">
+      <section className="pt-[140px] pb-[72px] px-6 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0a0a0f 0%, #0d1117 40%, #0a0f1e 100%)' }}>
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.025]"
           style={{
@@ -719,9 +711,9 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[12px] font-semibold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/70 text-[12px] font-semibold uppercase tracking-widest mb-6"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" />
             Portfolio
           </motion.div>
 
@@ -729,7 +721,7 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="type-display-small text-[var(--color-black)] mb-5"
+            className="type-display-small text-white mb-5"
           >
             Work that{' '}
             <span className="gradient-text-blue-purple">speaks clearly</span>
@@ -738,23 +730,17 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="type-body-large text-[var(--color-gray-600)] max-w-2xl mx-auto"
+            className="type-body-large text-white/60 max-w-2xl mx-auto"
           >
             Case studies showing how clarity-first UX reduces friction and improves activation.
           </motion.p>
         </div>
       </section>
 
-      {/* ── Sticky Filter Tabs ── */}
-      <div
-        className={`sticky top-[64px] z-40 transition-all duration-300 ${
-          filterStuck
-            ? 'bg-black/20 backdrop-blur-xl border-b border-white/10'
-            : 'bg-[var(--color-gray-50)] border-b border-transparent'
-        }`}
-        style={{ boxShadow: '0 1px 12px rgba(0,0,0,0.04)' }}>
-        <div className="max-w-[1100px] mx-auto px-6 py-4">
-          <div className="flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+      {/* ── Filter Tabs ── */}
+      <div className="sticky top-[64px] z-40 bg-[var(--color-gray-50)]/95 backdrop-blur-sm border-b border-gray-200/80">
+        <div className="max-w-[1100px] mx-auto px-6">
+          <div className="flex items-center gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             {ALL_CATEGORIES.map((cat) => {
               const count =
                 cat === 'All'
@@ -770,18 +756,20 @@ export default function ProjectsPage() {
                       projectsGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 50);
                   }}
-                  className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-200"
+                  className="flex-shrink-0 flex items-center gap-2 px-4 py-3.5 text-[13px] font-semibold transition-all duration-200 relative"
                   style={{
-                    background: active ? '#1d1d1f' : '#F5F5F7',
-                    color: active ? '#fff' : '#6B7280',
+                    color: active ? '#1d1d1f' : '#9CA3AF',
+                    borderBottom: active ? '2px solid #1d1d1f' : '2px solid transparent',
+                    background: 'transparent',
+                    marginBottom: '-1px',
                   }}
                 >
                   {cat}
                   <span
-                    className="text-[11px] px-1.5 py-0.5 rounded-full"
+                    className="text-[11px] px-1.5 py-0.5 rounded-full font-semibold"
                     style={{
-                      background: active ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.08)',
-                      color: active ? 'rgba(255,255,255,0.9)' : '#9CA3AF',
+                      background: active ? '#1d1d1f' : '#F3F4F6',
+                      color: active ? '#fff' : '#9CA3AF',
                     }}
                   >
                     {count}

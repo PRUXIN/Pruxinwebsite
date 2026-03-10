@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function GlobalNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isDarkPage = location.pathname === '/' || location.pathname === '/clara';
+  const isDarkPage = location.pathname === '/' || location.pathname === '/clara' || location.pathname === '/projects';
 
   useEffect(() => {
     setMobileMenuOpen(false);
