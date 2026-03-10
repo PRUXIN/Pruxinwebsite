@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ChevronDown, ClipboardCheck, Layers, ArrowRight, Workflow, Sparkles, Phone, Zap } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
-import hubFeaturedImg from 'figma:asset/bc3f84889b5aefc773df5d8e78faaa3042836ba8.png';
+import hubFeaturedImg from 'figma:asset/5563cc8977f651420485837644ab270649421a4a.png';
 import { MagicCard } from '../magicui/magic-card';
 import {
   FloatingParticles,

@@ -6,19 +6,22 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { RevealOnScroll, MagneticWrap } from '../ui/effects';
 
 // ─── Threecolts HUB real screenshots ─────────────────────────────────────────
-import hubImg1 from 'figma:asset/bc3f84889b5aefc773df5d8e78faaa3042836ba8.png';
-const hubImg2 = 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTYWFTJTIwZGFzaGJvYXJkJTIwYXN0JTIwY29uc3VtZXJzJTIwY29udHJvbCBwYW5lbCUyMGRhcmt8ZW58MXx8fHwxNzczMTUzMDA4fDA&ixlib=rb-4.1.0&q=80&w=1080';
-const hubImg3 = 'https://images.unsplash.com/photo-1631006732121-a6da2f4864d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMHNldHRpbmdzJTIwcGFuZWwlMjBhZG1pbiUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzMxNTMwMDh8MA&ixlib=rb-4.1.0&q=80&w=1080';
-const hubImg4 = 'https://images.unsplash.com/photo-1735825764457-ffdf0b5aa5dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnZvaWNlJTIwcGF5bWVudCUyMGJ1c2luZXNzJTIwZmluYW5jZSUyMHNvZnR3YXJlfGVufDF8fHx8MTc3MzE1MzAxNHww&ixlib=rb-4.1.0&q=80&w=1080';
+import hubImg1 from 'figma:asset/5563cc8977f651420485837644ab270649421a4a.png';
+import hubImg2 from 'figma:asset/bc3f84889b5aefc773df5d8e78faaa3042836ba8.png';
+import hubImg3 from 'figma:asset/8b78dc8d30d5be297c5d241ddeaddcc9027ef912.png';
+import hubImg4 from 'figma:asset/a811de27699ad1ae1920285e81c9d8868fc2e249.png';
 
 // ─── Threecolts BOB real screenshots ─────────────────────────────────────────
-const bobImg1 = 'https://images.unsplash.com/photo-1588201989301-73f106507395?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2UlMjBhZG1pbiUyMHNlYXJjaCUyMHBvcnRhbCUyMGRhcmt8ZW58MXx8fHwxNzczMTUzMDA5fDA&ixlib=rb-4.1.0&q=80&w=1080';
-const bobImg2 = 'https://images.unsplash.com/photo-1762330467019-f38839ad4b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFyY2glMjByZXN1bHRzJTIwZGF0YWJhc2UlMjBsb29rdXAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczMTUzMDE1fDA&ixlib=rb-4.1.0&q=80&w=1080';
-const bobImg3 = 'https://images.unsplash.com/photo-1750816204148-5d02aff367cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZG1pbiUyMHBvcnRhbCUyMGFjY291bnQlMjBwcm9maWxlJTIwcmVjb3Jkc3xlbnwxfHx8fDE3NzMxNTMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080';
-const bobImg4 = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ2VuY3klMjBtdWx0aS1jbGllbnQlMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBvdmVydmlld3xlbnwxfHx8fDE3NzMxNTMwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080';
+import bobImg1 from 'figma:asset/a060d1c28b8b5de90cc4c5a29216adbc2baac19b.png';
+import bobImg2 from 'figma:asset/c3c2bfdd3fa0c93123f37a23ae8f65f0300770f6.png';
+import bobImg3 from 'figma:asset/3086ef8a6cfca296cfbe06f35d9742616ef4e209.png';
+import bobImg4 from 'figma:asset/adde0af9854db2be8ab090900ac537c70e063ec2.png';
+import bobImg5 from 'figma:asset/d18f653328798b42aeb5458c66a2320dc1548018.png';
+import bobImg6 from 'figma:asset/c7d311edbceee74e300df892815159c86dba7c8e.png';
+import bobImg7 from 'figma:asset/ccab372b9df01cdaa8ee1d77a87201ebb8b75511.png';
 
 // ─── Threecolts Agency Portal real screenshot ─────────────────────────────────
-const agencyImg1 = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ2VuY3klMjBtdWx0aS1jbGllbnQlMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBvdmVydmlld3xlbnwxfHx8fDE3NzMxNTMwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080';
+import agencyImg1 from 'figma:asset/39bbb16d1f913fbb272604a03289fcbe744062e5.png';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -152,6 +155,18 @@ const PROJECTS: Project[] = [
       {
         url: bobImg4,
         caption: 'Issue Credit Panel — Audited admin action with support ticket link',
+      },
+      {
+        url: bobImg5,
+        caption: 'User Management — Invite, manage roles and authentication in one place',
+      },
+      {
+        url: bobImg6,
+        caption: 'Centralised Settings Panel — Company info, Amazon account & brand logo',
+      },
+      {
+        url: bobImg7,
+        caption: 'Payment & Invoice — Consolidated billing, invoices and payment methods',
       },
     ],
     problem:
