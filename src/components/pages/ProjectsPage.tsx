@@ -673,6 +673,15 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightboxProject, setLightboxProject] = useState<Project | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [filterStuck, setFilterStuck] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setFilterStuck(window.scrollY >= 200);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Only show projects where visible !== false
   const VISIBLE_PROJECTS = PROJECTS.filter((p) => p.visible !== false);
@@ -736,7 +745,12 @@ export default function ProjectsPage() {
       </section>
 
       {/* ── Sticky Filter Tabs ── */}
-      <div className="sticky top-[64px] z-40 bg-white border-b border-gray-100"
+      <div
+        className={`sticky top-[64px] z-40 transition-all duration-300 ${
+          filterStuck
+            ? 'bg-black/20 backdrop-blur-xl border-b border-white/10'
+            : 'bg-transparent border-b border-transparent'
+        }`}
         style={{ boxShadow: '0 1px 12px rgba(0,0,0,0.04)' }}>
         <div className="max-w-[1100px] mx-auto px-6 py-4">
           <div className="flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
