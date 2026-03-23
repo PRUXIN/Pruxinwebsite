@@ -116,7 +116,7 @@ export default function ContentPage() {
                       href={article.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-electric-blue)] group/link"
+                      className="inline-flex items-center gap-2 text-[length:var(--text-base)] font-medium text-[var(--color-electric-blue)] group/link"
                     >
                       Read on Medium
                       <ExternalLink size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
@@ -134,7 +134,7 @@ export default function ContentPage() {
                   href="https://medium.com/@pranavraval87"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[17px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
+                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     View All Articles on Medium <ArrowRight size={18} />
@@ -189,7 +189,7 @@ export default function ContentPage() {
                   href="https://www.youtube.com/@pruxin_Clarity_in_every_click"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[17px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
+                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Youtube size={20} /> Subscribe on YouTube
@@ -243,7 +243,7 @@ export default function ContentPage() {
                   href="https://open.spotify.com/show/7JyafgYs0C5CXZTGksngVe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[17px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
+                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Music size={20} /> Listen on Spotify

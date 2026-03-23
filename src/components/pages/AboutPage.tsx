@@ -95,7 +95,7 @@ export default function AboutPage() {
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, delay: badge.delay }}
                   >
-                    <span className="text-[12px] font-semibold text-[var(--color-gray-800)] whitespace-nowrap">{badge.text}</span>
+                    <span className="text-[length:var(--text-xs)] font-semibold text-[var(--color-gray-800)] whitespace-nowrap">{badge.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -254,7 +254,7 @@ export default function AboutPage() {
               <StaggerItem key={item}>
                 <div className="bg-white rounded-2xl p-5 border border-[rgba(0,0,0,0.06)] shadow-subtle flex items-center gap-3 hover:shadow-medium hover:-translate-y-0.5 transition-all duration-300 group cursor-default">
                   <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500/15 to-purple-500/10 flex items-center justify-center flex-shrink-0">
-                    <span className="gradient-text-blue-purple font-bold text-[14px]">{i + 1}</span>
+                    <span className="gradient-text-blue-purple font-bold text-[length:var(--text-sm)]">{i + 1}</span>
                   </div>
                   <span className="type-body-small text-[var(--color-gray-800)] font-medium">{item}</span>
                 </div>
@@ -300,7 +300,7 @@ export default function AboutPage() {
             <MagneticWrap strength={0.1}>
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
+                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />

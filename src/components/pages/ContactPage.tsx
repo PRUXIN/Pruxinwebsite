@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Send, Mail, Linkedin, Instagram, Facebook, CheckCircle, Clock, Phone } from 'lucide-react';
 import { RevealOnScroll } from '../ui/effects';
@@ -187,7 +188,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[17px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed w-full md:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-2 h-[56px] px-10 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed w-full md:w-auto"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     {sending ? (
@@ -210,9 +211,9 @@ export default function ContactPage() {
                 {/* Step 5d — GDPR copy */}
                 <p className="text-xs text-gray-400 text-center mt-4">
                   By submitting this form, you agree to our{' '}
-                  <a href="/privacy" className="underline hover:text-gray-600 transition-colors">
+                  <Link to="/privacy" className="underline hover:text-gray-600 transition-colors">
                     Privacy Policy
-                  </a>
+                  </Link>
                   . Your data is securely processed to handle your enquiry.
                 </p>
               </form>
@@ -281,7 +282,7 @@ export default function ContactPage() {
                         {link.icon ? (
                           <link.icon size={18} className="text-[var(--color-gray-600)]" />
                         ) : (
-                          <span className="font-bold text-[14px] text-[var(--color-gray-600)]">M</span>
+                          <span className="font-bold text-[length:var(--text-sm)] text-[var(--color-gray-600)]">M</span>
                         )}
                       </div>
                       {link.name}

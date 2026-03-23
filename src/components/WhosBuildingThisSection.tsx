@@ -79,7 +79,7 @@ export default function WhosBuildingThisSection() {
                   <div className="text-[40px] leading-none font-bold text-[var(--color-black)] mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-[14px] text-[var(--color-gray-600)]">
+                  <div className="text-[length:var(--text-sm)] text-[var(--color-gray-600)]">
                     {stat.label}
                   </div>
                 </div>

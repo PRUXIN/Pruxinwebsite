@@ -62,7 +62,7 @@ export default function WhatsTheCatchSection() {
             <div className="mt-12">
               <a 
                 href="https://calendly.com/pruxin/30min"
-                className="inline-flex items-center gap-1 text-[17px] font-medium text-[var(--color-electric-blue)] hover:opacity-80 transition-opacity"
+                className="inline-flex items-center gap-1 text-[length:var(--text-md)] font-medium text-[var(--color-electric-blue)] hover:opacity-80 transition-opacity"
               >
                 Fair enough? Let's talk <ArrowRight className="w-4 h-4 ml-1" />
               </a>

@@ -200,7 +200,7 @@ export default function ServicesPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, type: 'spring', stiffness: 300 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-600 text-[14px] font-medium border border-purple-100"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-600 text-[length:var(--text-sm)] font-medium border border-purple-100"
                 >
                   {step}
                   {i < 4 && <span className="text-purple-300">&rarr;</span>}
@@ -257,7 +257,7 @@ export default function ServicesPage() {
             <MagneticWrap strength={0.1}>
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
+                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
