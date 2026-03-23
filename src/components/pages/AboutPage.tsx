@@ -85,17 +85,19 @@ export default function AboutPage() {
                 ].map((badge) => (
                   <motion.div
                     key={badge.text}
-                    className="absolute glass-light rounded-full px-3.5 py-1.5 shadow-medium"
+                    className="absolute px-4 py-2 rounded-full text-white font-semibold backdrop-blur-md"
                     style={{
                       top: badge.top,
                       right: badge.right,
                       bottom: badge.bottom,
                       left: badge.left,
+                      background: 'rgba(255,255,255,0.12)',
+                      border: '1px solid rgba(255,255,255,0.2)',
                     }}
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, delay: badge.delay }}
                   >
-                    <span className="text-[length:var(--text-xs)] font-semibold text-[var(--color-gray-800)] whitespace-nowrap">{badge.text}</span>
+                    <span className="text-[length:var(--text-xs)] font-semibold whitespace-nowrap">{badge.text}</span>
                   </motion.div>
                 ))}
               </div>

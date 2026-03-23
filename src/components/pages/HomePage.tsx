@@ -124,7 +124,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white"
+            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white text-white text-[length:var(--text-3xl)]"
+            style={{ fontSize: 'var(--text-3xl)', color: '#FFFFFF' }}
           >
             Your next client called today.
             <br className="hidden md:block" /> No one answered.
@@ -339,17 +340,19 @@ export default function HomePage() {
                   {['8+ Years', '50+ Projects'].map((badge, i) => (
                     <motion.div
                       key={badge}
-                      className="absolute glass-light rounded-full px-3 py-1.5 shadow-medium"
+                      className="absolute px-4 py-2 rounded-full text-white font-semibold backdrop-blur-md"
                       style={{
                         top: i === 0 ? '10%' : 'auto',
                         bottom: i === 1 ? '10%' : 'auto',
                         right: i === 0 ? '-20px' : 'auto',
                         left: i === 1 ? '-20px' : 'auto',
+                        background: 'rgba(255,255,255,0.12)',
+                        border: '1px solid rgba(255,255,255,0.2)',
                       }}
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
                     >
-                      <span className="text-[length:var(--text-xs)] font-semibold text-[var(--color-gray-800)]">{badge}</span>
+                      <span className="text-[length:var(--text-xs)] font-semibold">{badge}</span>
                     </motion.div>
                   ))}
                 </div>
