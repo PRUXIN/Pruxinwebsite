@@ -124,7 +124,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white text-white text-[length:var(--text-3xl)]"
+            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white text-white text-[length:var(--text-3xl)] font-bold"
             style={{ fontSize: 'var(--text-3xl)', color: '#FFFFFF' }}
           >
             Your next client called today.

@@ -46,7 +46,7 @@ function Waveform() {
 function Label({ children }: { children: React.ReactNode }) {
   return (
     <span
-      className="inline-block text-[length:var(--text-xs)] font-semibold uppercase tracking-[0.15em] px-3 py-1 rounded-full mb-6"
+      className="inline-block text-[length:var(--text-xs)] font-semibold uppercase tracking-[0.15em] px-3 py-1 rounded-full mb-6 text-center"
       style={{ color: AQUA, background: AQUA_DIM, border: `1px solid ${AQUA_GLOW}` }}
     >
       {children}
@@ -221,7 +221,7 @@ export default function ClaraPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[length:var(--text-3xl)] font-bold text-white leading-[1.0] mb-6 tracking-tight"
+              className="text-[length:var(--text-3xl)] font-bold text-white leading-[1.0] mb-6 tracking-tight text-[64px]"
             >
               Your business never<br />misses another call.
             </motion.h1>
@@ -282,15 +282,13 @@ export default function ClaraPage() {
 
               <a
                 href={TEL}
-                className="block text-[length:var(--text-3xl)] font-bold mb-4 tracking-tight transition-opacity hover:opacity-80"
+                className="block text-[length:var(--text-3xl)] font-bold mb-4 tracking-tight transition-opacity hover:opacity-80 text-[32px]"
                 style={{ color: AQUA }}
               >
                 {DISPLAY_NUMBER}
               </a>
 
-              <div className="flex justify-center mb-6">
-                <Waveform />
-              </div>
+              
 
               <p className="text-white/50 text-[length:var(--text-base)] mb-8">
                 It's a real call. No forms, no menus, no waiting.
@@ -309,10 +307,10 @@ export default function ClaraPage() {
         <div className="max-w-[1100px] mx-auto">
           <RevealOnScroll className="text-center mb-16">
             <Label>The problem</Label>
-            <h2 className="text-[length:var(--text-2xl)] font-bold text-white leading-tight mb-4">
+            <h2 className="text-[length:var(--text-2xl)] font-bold text-white leading-tight mb-4 text-center text-[50px]">
               Most businesses are losing<br />leads right now.
             </h2>
-            <p className="text-white/50 text-[length:var(--text-md)] max-w-lg mx-auto">
+            <p className="text-white/50 text-[length:var(--text-md)] max-w-lg mx-auto text-[20px] text-center">
               Every missed call is a missed conversation. And most go to voicemail — which most callers won't leave.
             </p>
           </RevealOnScroll>
@@ -397,7 +395,7 @@ export default function ClaraPage() {
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-14 items-center">
           <RevealOnScroll direction="left">
             <Label>Real conversation</Label>
-            <h2 className="text-[length:var(--text-xl)] font-bold text-white leading-tight mb-6">
+            <h2 className="text-[length:var(--text-xl)] font-bold text-white leading-tight mb-6 text-[50px]">
               Clara sounds professional.<br />Every single call.
             </h2>
             <p className="text-white/55 text-[length:var(--text-base)] leading-relaxed mb-6">
@@ -490,7 +488,7 @@ export default function ClaraPage() {
         <div className="max-w-[560px] mx-auto text-center">
           <RevealOnScroll>
             <Label>Pricing</Label>
-            <h2 className="text-[length:var(--text-xl)] font-bold text-white mb-4">
+            <h2 className="text-[length:var(--text-xl)] font-bold text-white mb-4 text-[50px]">
               Simple. Transparent.
             </h2>
             <p className="text-white/50 text-[length:var(--text-base)] mb-12">
@@ -560,19 +558,19 @@ export default function ClaraPage() {
             {/* LEFT — sticky label, heading, CTA */}
             <div className="lg:sticky lg:top-24 lg:self-start">
               <p
-                className="text-xs font-semibold uppercase tracking-widest mb-4"
+                className="font-semibold uppercase tracking-widest mb-4 text-[12px]"
                 style={{ color: AQUA }}
               >
                 FAQ
               </p>
               <h2
-                className="text-3xl sm:text-4xl font-semibold leading-tight mb-6"
+                className="font-semibold leading-tight mx-[0px] mt-[0px] mb-[12px] text-[50px]"
                 style={{ color: '#F8FAFC' }}
               >
                 Questions about Clara
               </h2>
               <p
-                className="text-sm leading-relaxed mb-8"
+                className="leading-relaxed mb-8 text-[16px]"
                 style={{ color: '#64748B' }}
               >
                 If you don't find what you're looking for here,
@@ -580,7 +578,7 @@ export default function ClaraPage() {
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+                className="inline-flex items-center gap-1.5 font-medium transition-opacity hover:opacity-70 text-[16px] px-[0px] py-[12px]"
                 style={{ color: AQUA }}
               >
                 Get in touch
@@ -698,7 +696,7 @@ export default function ClaraPage() {
 
         <div className="max-w-[640px] mx-auto relative z-10">
           <RevealOnScroll>
-            <h2 className="text-[length:var(--text-3xl)] font-bold text-white leading-tight mb-4 tracking-tight">
+            <h2 className="text-[length:var(--text-3xl)] font-bold text-white leading-tight mb-4 tracking-tight text-[50px]">
               Call Clara.<br />Right now.
             </h2>
             <p className="text-white/45 text-[length:var(--text-md)] mb-6">Real call. Real AI. Real result.</p>
