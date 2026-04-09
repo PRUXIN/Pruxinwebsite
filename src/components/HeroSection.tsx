@@ -100,7 +100,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 h-[36px] rounded-full border border-white/15 bg-white/10 backdrop-blur-md mb-8"
         >
           <div className="w-2 h-2 rounded-full bg-[var(--color-coral-orange)] shadow-[0_0_8px_var(--color-coral-orange)]"></div>
-          <span className="text-[length:var(--text-sm)] font-medium uppercase tracking-wider text-white/90">Clarity-First UX Design</span>
+          <span className="text-[13px] font-medium uppercase tracking-wider text-white/90">Clarity-First UX Design</span>
         </motion.div>
 
         {/* Headline */}
@@ -145,7 +145,7 @@ export default function HeroSection() {
             href="https://calendly.com/pruxin/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-[56px] px-8 bg-white text-black text-[length:var(--text-md)] font-semibold rounded-full hover:scale-[1.02] transition-all duration-200 shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] w-full sm:w-auto min-w-[200px]"
+            className="inline-flex items-center justify-center h-[56px] px-8 bg-white text-black text-[17px] font-semibold rounded-full hover:scale-[1.02] transition-all duration-200 shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] w-full sm:w-auto min-w-[200px]"
           >
             Book a Call
           </a>

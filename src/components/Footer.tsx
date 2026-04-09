@@ -102,7 +102,7 @@ export default function Footer() {
                   {social.icon ? (
                     <social.icon size={17} className="text-slate-400 group-hover:text-white transition-colors" />
                   ) : (
-                    <span className="text-slate-400 group-hover:text-white font-bold text-[length:var(--text-sm)] transition-colors">M</span>
+                    <span className="text-slate-400 group-hover:text-white font-bold text-[13px] transition-colors">M</span>
                   )}
                 </a>
               ))}
@@ -116,9 +116,6 @@ export default function Footer() {
             &copy; 2026 PRUXIN. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            <Link to="/privacy" className="hover:opacity-70 transition-opacity">
-              Privacy Policy
-            </Link>
             {socialLinks
               .filter((s) => s.name !== 'Email')
               .map((social) => (

@@ -114,7 +114,7 @@ export default function HomePage() {
             className="inline-flex items-center gap-2.5 h-[38px] rounded-full glass mb-10 px-[20px] py-[12px]"
           >
             <Sparkles size={14} className="text-amber-400" />
-            <span className="text-[length:var(--text-sm)] font-medium uppercase tracking-[0.08em] text-white/90">
+            <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-white/90">
               AI Voice Receptionist — Live on UK Number
             </span>
           </motion.div>
@@ -124,8 +124,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white text-white text-[length:var(--text-3xl)] font-bold"
-            style={{ fontSize: 'var(--text-3xl)', color: '#FFFFFF' }}
+            className="type-display-large mb-8 max-w-5xl mx-auto gradient-text-white"
           >
             Your next client called today.
             <br className="hidden md:block" /> No one answered.
@@ -150,7 +149,7 @@ export default function HomePage() {
             <MagneticWrap strength={0.15}>
               <Link
                 to="/clara"
-                className="group relative inline-flex items-center justify-center h-[56px] px-10 text-[length:var(--text-md)] font-semibold rounded-full overflow-hidden transition-all duration-300 shadow-[0_4px_30px_rgba(255,255,255,0.12)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)]"
+                className="group relative inline-flex items-center justify-center h-[56px] px-10 text-[17px] font-semibold rounded-full overflow-hidden transition-all duration-300 shadow-[0_4px_30px_rgba(255,255,255,0.12)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)]"
               >
                 <div className="absolute inset-0 bg-white" />
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-blue-100/50 to-transparent" />
@@ -159,7 +158,7 @@ export default function HomePage() {
             </MagneticWrap>
           </motion.div>
 
-          {/* Floating stat badges */}
+          {/* Floating stat badges — kept exactly as-is */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -177,14 +176,14 @@ export default function HomePage() {
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
               >
-                <span className="text-white font-semibold text-[length:var(--text-base)]">
+                <span className="text-white font-semibold text-[15px]">
                   {stat.value !== null ? (
                     <AnimatedCounter value={stat.value} suffix={stat.suffix || ''} />
                   ) : (
                     '🇬🇧'
                   )}
                 </span>
-                <span className="text-white/50 text-[length:var(--text-sm)]">{stat.label}</span>
+                <span className="text-white/50 text-[13px]">{stat.label}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -232,16 +231,16 @@ export default function HomePage() {
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
-                <span className="text-[length:var(--text-sm)] font-medium tracking-wide" style={{ color: '#14B8A6' }}>
+                <span className="text-[13px] font-medium tracking-wide" style={{ color: '#14B8A6' }}>
                   Live now — answering real calls
                 </span>
               </motion.div>
 
               <RevealOnScroll direction="left">
-                <h2 className="text-[length:var(--text-3xl)] font-bold text-white leading-[1.05] mb-5 tracking-tight">
+                <h2 className="text-[clamp(32px,5vw,60px)] font-bold text-white leading-[1.05] mb-5 tracking-tight">
                   Most missed calls don't go to voicemail.<br />They go to your competitor.
                 </h2>
-                <p className="text-[length:var(--text-md)] text-white/55 leading-relaxed mb-8 max-w-[440px]">
+                <p className="text-[17px] text-white/55 leading-relaxed mb-8 max-w-[440px]">
                   Clara answers instantly, every time. Real conversation — no phone trees, no scripts. She qualifies the lead and books directly into your calendar. Automatically. While you're with a client.
                 </p>
 
@@ -249,7 +248,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-4 mb-10">
                   <a
                     href="tel:+441313815821"
-                    className="inline-flex items-center gap-2.5 h-[52px] px-8 rounded-full font-semibold text-[length:var(--text-base)] text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(20,184,166,0.4)]"
+                    className="inline-flex items-center gap-2.5 h-[52px] px-8 rounded-full font-semibold text-[16px] text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(20,184,166,0.4)]"
                     style={{ background: '#14B8A6' }}
                   >
                     <Phone size={17} />
@@ -257,7 +256,7 @@ export default function HomePage() {
                   </a>
                 </div>
 
-                <p className="text-white/25 text-[length:var(--text-sm)]">
+                <p className="text-white/25 text-[13px]">
                   UK number · Books into your calendar · No voicemail · Real conversation, not a bot
                 </p>
               </RevealOnScroll>
@@ -269,12 +268,12 @@ export default function HomePage() {
                 className="rounded-[24px] p-8 md:p-10 text-center"
                 style={{ background: 'rgba(20,184,166,0.07)', border: '1px solid rgba(20,184,166,0.20)' }}
               >
-                <p className="text-[length:var(--text-xs)] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: '#14B8A6' }}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: '#14B8A6' }}>
                   Live demo line
                 </p>
                 <a
                   href="tel:+441313815821"
-                  className="block text-[length:var(--text-xl)] font-bold mb-4 leading-tight tracking-tight hover:opacity-70 transition-opacity"
+                  className="block text-[clamp(28px,4vw,44px)] font-bold mb-4 leading-tight tracking-tight hover:opacity-70 transition-opacity"
                   style={{ color: '#14B8A6' }}
                 >
                   +44 131 381 5821
@@ -291,7 +290,7 @@ export default function HomePage() {
                     />
                   ))}
                 </div>
-                <p className="text-white/40 text-[length:var(--text-sm)]">Real call. No forms, no menus.</p>
+                <p className="text-white/40 text-[14px]">Real call. No forms, no menus.</p>
               </div>
             </RevealOnScroll>
           </div>
@@ -340,19 +339,17 @@ export default function HomePage() {
                   {['8+ Years', '50+ Projects'].map((badge, i) => (
                     <motion.div
                       key={badge}
-                      className="absolute px-4 py-2 rounded-full text-white font-semibold backdrop-blur-md"
+                      className="absolute glass-light rounded-full px-3 py-1.5 shadow-medium"
                       style={{
                         top: i === 0 ? '10%' : 'auto',
                         bottom: i === 1 ? '10%' : 'auto',
                         right: i === 0 ? '-20px' : 'auto',
                         left: i === 1 ? '-20px' : 'auto',
-                        background: 'rgba(255,255,255,0.12)',
-                        border: '1px solid rgba(255,255,255,0.2)',
                       }}
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
                     >
-                      <span className="text-[length:var(--text-xs)] font-semibold">{badge}</span>
+                      <span className="text-[12px] font-semibold text-[var(--color-gray-800)]">{badge}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -412,7 +409,7 @@ export default function HomePage() {
                   <div className="p-8 relative">
                     {/* Number badge */}
                     <div className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                      <span className="text-white text-[length:var(--text-sm)] font-bold">{service.num}</span>
+                      <span className="text-white text-[13px] font-bold">{service.num}</span>
                     </div>
 
                     {/* Icon */}
@@ -426,7 +423,7 @@ export default function HomePage() {
                     {/* Single CTA per card */}
                     <Link
                       to={service.ctaHref}
-                      className={`inline-flex items-center gap-2 text-[length:var(--text-base)] font-medium ${service.iconColor} group/link`}
+                      className={`inline-flex items-center gap-2 text-[15px] font-medium ${service.iconColor} group/link`}
                     >
                       {service.cta}
                       <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
@@ -460,7 +457,7 @@ export default function HomePage() {
                 {/* Floating tags */}
                 <div className="absolute top-4 left-4 flex gap-2">
                   {['SaaS', 'Dashboard'].map((tag) => (
-                    <span key={tag} className="glass rounded-full px-3 py-1 text-white text-[length:var(--text-xs)] font-medium">
+                    <span key={tag} className="glass rounded-full px-3 py-1 text-white text-[12px] font-medium">
                       {tag}
                     </span>
                   ))}
@@ -487,8 +484,8 @@ export default function HomePage() {
                   ].map((metric) => (
                     <div key={metric.label} className="flex items-center gap-2 bg-[var(--color-gray-50)] rounded-xl px-4 py-2.5">
                       <div className={`w-2 h-2 rounded-full ${metric.color}`} />
-                      <span className="text-[length:var(--text-sm)] font-semibold text-[var(--color-black)]">{metric.value}</span>
-                      <span className="text-[length:var(--text-sm)] text-[var(--color-gray-500)]">{metric.label}</span>
+                      <span className="text-[14px] font-semibold text-[var(--color-black)]">{metric.value}</span>
+                      <span className="text-[13px] text-[var(--color-gray-500)]">{metric.label}</span>
                     </div>
                   ))}
                 </div>
@@ -496,7 +493,7 @@ export default function HomePage() {
                 <MagneticWrap strength={0.1} className="self-start">
                   <Link
                     to="/projects"
-                    className="inline-flex items-center gap-2 text-[length:var(--text-base)] font-medium text-[var(--color-electric-blue)] group/link"
+                    className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-electric-blue)] group/link"
                   >
                     View Case Study
                     <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
@@ -539,7 +536,7 @@ export default function HomePage() {
             <MagneticWrap strength={0.1}>
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center h-[56px] px-12 text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy bg-[var(--color-black)] text-white hover:scale-[1.02]"
+                className="group relative inline-flex items-center justify-center h-[56px] px-12 text-[18px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy bg-[var(--color-black)] text-white hover:scale-[1.02]"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />

@@ -174,7 +174,7 @@ const PROJECTS: Project[] = [
     role: 'UX Designer, Design Sprint Facilitator',
     whatIDid: [
       'Facilitated Design Sprint workshop to identify CS team pain points and prioritise solutions',
-      "Created user story map using MoSCoW prioritisation framework (Must/Should/Could/Won't Have)",
+      'Created user story map using MoSCoW prioritisation framework (Must/Should/Could/Won\'t Have)',
       'Mapped user journeys for 5 workflow categories: Self-service, User management, Organisation management, Account management, and BOB landing flows',
       'Conducted competitive analysis studying admin portal patterns from Airbnb, Slack, Webflow, Notion, and Expedia',
       'Designed Universal Search enabling CS team to find any organisation, account, or user instantly',
@@ -199,7 +199,7 @@ const PROJECTS: Project[] = [
       },
     ],
     problem:
-      "Agencies managing dozens of clients had no centralised overview. They logged into separate accounts, had no consolidated billing view, and couldn't control what each team member could see or edit.",
+      'Agencies managing dozens of clients had no centralised overview. They logged into separate accounts, had no consolidated billing view, and couldn\'t control what each team member could see or edit.',
     role: 'UX Designer',
     whatIDid: [
       'Designed multi-tenant agency dashboard with instant client switching',
@@ -323,16 +323,16 @@ function Lightbox({ project, startIndex, onClose }: LightboxProps) {
               className="w-2 h-2 rounded-full"
               style={{ background: project.accentColor }}
             />
-            <p className="text-white/40 text-[length:var(--text-xs)] font-semibold uppercase tracking-widest">
+            <p className="text-white/40 text-[11px] font-semibold uppercase tracking-widest">
               {project.category}
             </p>
           </div>
-          <p className="text-white text-[length:var(--text-sm)] font-semibold leading-tight">{project.title}</p>
+          <p className="text-white text-[14px] font-semibold leading-tight">{project.title}</p>
         </div>
 
         {/* Right: counter + close */}
         <div className="flex items-center gap-4">
-          <span className="text-white/40 text-[length:var(--text-sm)] tabular-nums">
+          <span className="text-white/40 text-[13px] tabular-nums">
             {idx + 1} / {total}
           </span>
           <button
@@ -383,7 +383,7 @@ function Lightbox({ project, startIndex, onClose }: LightboxProps) {
               className="max-h-[calc(100vh-220px)] max-w-full object-contain rounded-2xl"
               style={{ boxShadow: '0 40px 100px rgba(0,0,0,0.7)' }}
             />
-            <p className="mt-4 text-white/50 text-[length:var(--text-sm)] text-center tracking-wide">
+            <p className="mt-4 text-white/50 text-[13px] text-center tracking-wide">
               {current.caption}
             </p>
           </motion.div>
@@ -475,7 +475,7 @@ function ProjectGallery({
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.35)' }}>
           <div
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-[length:var(--text-sm)] font-semibold"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-[14px] font-semibold"
             style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)' }}
           >
             <Eye size={16} />
@@ -485,7 +485,7 @@ function ProjectGallery({
 
         {/* Image count badge */}
         <div
-          className="absolute top-3 right-3 text-white text-[length:var(--text-xs)] font-semibold px-2.5 py-1 rounded-full"
+          className="absolute top-3 right-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full"
           style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)' }}
         >
           {project.images.length} {project.images.length === 1 ? 'image' : 'images'}
@@ -493,7 +493,7 @@ function ProjectGallery({
 
         {/* Caption bar */}
         <div
-          className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-[length:var(--text-xs)] font-medium"
+          className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-[12px] font-medium"
           style={{
             background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)',
           }}
@@ -563,7 +563,7 @@ function ProjectCard({
               {project.title}
             </h2>
             <span
-              className="flex-shrink-0 text-[length:var(--text-xs)] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full"
+              className="flex-shrink-0 text-[11px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full"
               style={{ background: project.accentLight, color: project.accentColor }}
             >
               {project.category}
@@ -575,7 +575,7 @@ function ProjectCard({
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[length:var(--text-xs)] font-medium px-3 py-1 rounded-full border"
+                className="text-[12px] font-medium px-3 py-1 rounded-full border"
                 style={{
                   color: project.accentColor,
                   borderColor: project.accentColor + '30',
@@ -598,24 +598,24 @@ function ProjectCard({
           <div className="space-y-7">
             <div>
               <p
-                className="text-[length:var(--text-xs)] font-bold uppercase tracking-widest mb-2.5"
+                className="text-[11px] font-bold uppercase tracking-widest mb-2.5"
                 style={{ color: project.accentColor }}
               >
                 The Problem
               </p>
-              <p className="text-[length:var(--text-base)] text-gray-600 leading-relaxed">
+              <p className="text-[15px] text-gray-600 leading-relaxed">
                 {project.problem}
               </p>
             </div>
 
             <div>
               <p
-                className="text-[length:var(--text-xs)] font-bold uppercase tracking-widest mb-2.5"
+                className="text-[11px] font-bold uppercase tracking-widest mb-2.5"
                 style={{ color: project.accentColor }}
               >
                 My Role
               </p>
-              <p className="text-[length:var(--text-base)] text-gray-800 font-medium leading-relaxed">
+              <p className="text-[15px] text-gray-800 font-medium leading-relaxed">
                 {project.role}
               </p>
             </div>
@@ -625,7 +625,7 @@ function ProjectCard({
           <div className="space-y-7">
             <div>
               <p
-                className="text-[length:var(--text-xs)] font-bold uppercase tracking-widest mb-3"
+                className="text-[11px] font-bold uppercase tracking-widest mb-3"
                 style={{ color: project.accentColor }}
               >
                 What I Did
@@ -638,7 +638,7 @@ function ProjectCard({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.06 + i * 0.04, duration: 0.3 }}
-                    className="flex items-start gap-3 text-[length:var(--text-sm)] text-gray-600 leading-snug"
+                    className="flex items-start gap-3 text-[14px] text-gray-600 leading-snug"
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full mt-[6px] flex-shrink-0"
@@ -659,12 +659,12 @@ function ProjectCard({
               }}
             >
               <p
-                className="text-[length:var(--text-xs)] font-bold uppercase tracking-widest mb-2"
+                className="text-[11px] font-bold uppercase tracking-widest mb-2"
                 style={{ color: project.accentColor }}
               >
                 Outcome
               </p>
-              <p className="text-[length:var(--text-sm)] text-gray-700 leading-relaxed font-medium">
+              <p className="text-[14px] text-gray-700 leading-relaxed font-medium">
                 {project.outcome}
               </p>
             </div>
@@ -731,7 +731,7 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/70 text-[length:var(--text-xs)] font-semibold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/70 text-[12px] font-semibold uppercase tracking-widest mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" />
             Portfolio
@@ -776,7 +776,7 @@ export default function ProjectsPage() {
                       projectsGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 50);
                   }}
-                  className="flex-shrink-0 flex items-center gap-2 px-4 py-3.5 text-[length:var(--text-sm)] font-semibold transition-all duration-200 relative"
+                  className="flex-shrink-0 flex items-center gap-2 px-4 py-3.5 text-[13px] font-semibold transition-all duration-200 relative"
                   style={{
                     color: active ? '#1d1d1f' : '#9CA3AF',
                     borderBottom: active ? '2px solid #1d1d1f' : '2px solid transparent',
@@ -786,7 +786,7 @@ export default function ProjectsPage() {
                 >
                   {cat}
                   <span
-                    className="text-[length:var(--text-xs)] px-1.5 py-0.5 rounded-full font-semibold"
+                    className="text-[11px] px-1.5 py-0.5 rounded-full font-semibold"
                     style={{
                       background: active ? '#1d1d1f' : '#F3F4F6',
                       color: active ? '#fff' : '#9CA3AF',
@@ -825,7 +825,7 @@ export default function ProjectsPage() {
           </AnimatePresence>
 
           {filtered.length === 0 && (
-            <div className="text-center py-24 text-gray-400 text-[length:var(--text-base)]">
+            <div className="text-center py-24 text-gray-400 text-[15px]">
               No projects in this category yet.
             </div>
           )}
@@ -857,7 +857,7 @@ export default function ProjectsPage() {
             <MagneticWrap strength={0.1}>
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
+                className="group relative inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full overflow-hidden transition-all duration-300 shadow-strong hover:shadow-heavy hover:scale-[1.02]"
               >
                 <span className="relative z-10">Let's Talk</span>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />

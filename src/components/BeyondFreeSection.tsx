@@ -98,7 +98,7 @@ export default function BeyondFreeSection() {
 
               <a 
                 href="#" 
-                className="text-[length:var(--text-base)] font-medium hover:underline"
+                className="text-[15px] font-medium hover:underline"
                 style={{ color: card.accent }}
               >
                 {card.link}

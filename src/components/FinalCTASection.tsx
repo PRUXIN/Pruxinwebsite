@@ -58,7 +58,7 @@ export default function FinalCTASection() {
             href="https://calendly.com/pruxin/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full hover:bg-[#1A1A1A] hover:scale-[1.01] transition-all duration-200 shadow-strong hover:shadow-heavy"
+            className="inline-flex items-center justify-center h-[56px] px-12 bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full hover:bg-[#1A1A1A] hover:scale-[1.01] transition-all duration-200 shadow-strong hover:shadow-heavy"
           >
             Book a Call
           </a>

@@ -57,7 +57,7 @@ export default function GlobalNavigation() {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className="relative ml-2 px-4 py-1.5 text-[length:var(--text-sm)] font-semibold rounded-full transition-all duration-200"
+                    className="relative ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-full transition-all duration-200"
                     style={{
                       background: isActive ? 'var(--color-clara-accent)' : 'rgba(20, 184, 166, 0.12)',
                       color: isActive ? '#fff' : '#0D9488',
@@ -72,7 +72,7 @@ export default function GlobalNavigation() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`relative px-3.5 py-2 text-[length:var(--text-sm)] font-medium transition-colors duration-200 rounded-lg ${
+                  className={`relative px-3.5 py-2 text-[14px] font-medium transition-colors duration-200 rounded-lg ${
                     useDarkText
                       ? isActive
                         ? 'text-[var(--color-black)]'
@@ -104,7 +104,7 @@ export default function GlobalNavigation() {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className={`relative inline-flex items-center justify-center h-[36px] px-5 text-[length:var(--text-sm)] font-medium rounded-full transition-all duration-300 overflow-hidden group ${
+              className={`relative inline-flex items-center justify-center h-[36px] px-5 text-[14px] font-medium rounded-full transition-all duration-300 overflow-hidden group ${
                 useDarkText
                   ? 'bg-[var(--color-black)] text-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
                   : 'bg-white text-[var(--color-black)] hover:shadow-[0_4px_20px_rgba(255,255,255,0.3)]'
@@ -166,7 +166,7 @@ export default function GlobalNavigation() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center h-[56px] w-full bg-[var(--color-black)] text-white text-[length:var(--text-md)] font-medium rounded-full mt-6 relative overflow-hidden group"
+                  className="inline-flex items-center justify-center h-[56px] w-full bg-[var(--color-black)] text-white text-[18px] font-medium rounded-full mt-6 relative overflow-hidden group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="relative z-10">Get a UX Audit</span>

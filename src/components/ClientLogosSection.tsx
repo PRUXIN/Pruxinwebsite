@@ -18,7 +18,7 @@ export default function ClientLogosSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-[length:var(--text-base)] font-medium uppercase tracking-[0.08em] text-[var(--color-slate-500)] mb-12"
+          className="text-center text-[15px] font-medium uppercase tracking-[0.08em] text-[var(--color-slate-500)] mb-12"
         >
           Trusted by teams at
         </motion.p>
@@ -34,7 +34,7 @@ export default function ClientLogosSection() {
               className="flex items-center justify-center h-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <div className="w-full h-full bg-[var(--color-slate-200)] rounded-lg flex items-center justify-center px-4">
-                <span className={`text-[var(--color-slate-600)] font-medium ${logo.length > 15 ? 'text-[length:var(--text-sm)]' : 'text-[length:var(--text-base)]'}`}>
+                <span className={`text-[var(--color-slate-600)] font-medium ${logo.length > 15 ? 'text-[14px]' : 'text-[16px]'}`}>
                   {logo}
                 </span>
               </div>

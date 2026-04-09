@@ -118,7 +118,7 @@ function CTAButton({
   href: string;
 }) {
   const base =
-    "w-full inline-flex items-center justify-center h-[48px] rounded-[10px] text-[length:var(--text-base)] font-semibold transition-all duration-200 cursor-pointer select-none";
+    "w-full inline-flex items-center justify-center h-[48px] rounded-[10px] text-[15px] font-semibold transition-all duration-200 cursor-pointer select-none";
 
   const variants = {
     outline: `border-2 border-[#1d1d1f] text-[#1d1d1f] bg-transparent hover:bg-[#1d1d1f] hover:text-white`,
@@ -169,7 +169,7 @@ function PlanCard({
     >
       {plan.badge && (
         <span
-          className="absolute top-5 right-5 text-white text-[length:var(--text-xs)] font-semibold px-3 py-1 rounded-md"
+          className="absolute top-5 right-5 text-white text-[12px] font-semibold px-3 py-1 rounded-md"
           style={{ background: "#0066CC", borderRadius: "6px" }}
         >
           {plan.badge}
@@ -177,14 +177,14 @@ function PlanCard({
       )}
 
       <p
-        className="text-[length:var(--text-sm)] font-semibold uppercase tracking-widest mb-3"
+        className="text-[13px] font-semibold uppercase tracking-widest mb-3"
         style={{ color: isPopular ? "#0066CC" : "#86868b" }}
       >
         {plan.label}
       </p>
 
       <p
-        className="text-[length:var(--text-sm)] leading-snug mb-6"
+        className="text-[14px] leading-snug mb-6"
         style={{ color: "#86868b" }}
       >
         {plan.tagline}
@@ -203,7 +203,7 @@ function PlanCard({
         </span>
       </div>
       <p
-        className="text-[length:var(--text-sm)] mb-8"
+        className="text-[13px] mb-8"
         style={{ color: "#86868b" }}
       >
         {plan.priceLabel}
@@ -228,7 +228,7 @@ function PlanCard({
             transition={{ duration: 0.3, delay: 0.05 + i * 0.06 }}
             className="flex items-start gap-2.5"
           >
-            <span className="flex-shrink-0 text-[length:var(--text-base)] leading-none mt-[1px] text-[#34c759]">✓</span>
+            <span className="flex-shrink-0 text-[15px] leading-none mt-[1px] text-[#34c759]">✓</span>
             <span className="text-[13.5px] leading-snug" style={{ color: "#1d1d1f" }}>
               {feat}
             </span>
@@ -261,14 +261,14 @@ function AddonCard({
     >
       {addon.badge && (
         <span
-          className="absolute top-4 right-4 text-white text-[length:var(--text-xs)] font-semibold px-2.5 py-1 rounded-full"
+          className="absolute top-4 right-4 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full"
           style={{ background: addon.badgeColor! }}
         >
           {addon.badge}
         </span>
       )}
       <p
-        className="text-[length:var(--text-base)] font-semibold mb-3"
+        className="text-[16px] font-semibold mb-3"
         style={{ color: "#1d1d1f" }}
       >
         {addon.name}
@@ -280,7 +280,7 @@ function AddonCard({
         {addon.price}
       </p>
       <p
-        className="text-[length:var(--text-sm)] leading-relaxed"
+        className="text-[14px] leading-relaxed"
         style={{ color: "#86868b" }}
       >
         {addon.description}
@@ -325,7 +325,7 @@ export default function PricingSection() {
             </span>
           </h2>
           <p
-            className="text-[length:var(--text-md)]"
+            className="text-[18px]"
             style={{ color: "#86868b", lineHeight: 1.6 }}
           >
             Pick the engagement that fits where you are right now.
@@ -362,7 +362,7 @@ export default function PricingSection() {
               Need something extra?
             </h3>
             <p
-              className="text-[length:var(--text-base)]"
+              className="text-[16px]"
               style={{ color: "#86868b" }}
             >
               Add only what you need. No bundles forced on you.
@@ -386,7 +386,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-[length:var(--text-sm)] italic"
+          className="text-center text-[14px] italic"
           style={{
             color: "#86868b",
             paddingTop: "40px",
