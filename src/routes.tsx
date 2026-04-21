@@ -8,7 +8,7 @@ const ProjectsPage = React.lazy(() => import("./components/pages/ProjectsPage"))
 const AboutPage = React.lazy(() => import("./components/pages/AboutPage"));
 const ContactPage = React.lazy(() => import("./components/pages/ContactPage"));
 const ContentPage = React.lazy(() => import("./components/pages/ContentPage"));
-const ClaraPage = React.lazy(() => import("./components/pages/ClaraPage"));
+const RuxiPage = React.lazy(() => import("./components/pages/RuxiPage"));
 const PrivacyPage = React.lazy(() => import("./components/pages/PrivacyPage"));
 
 function NotFound() {
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       { path: "about", Component: AboutPage },
       { path: "content", Component: ContentPage },
       { path: "contact", Component: ContactPage },
-      { path: "clara", Component: ClaraPage },
+      { path: "ruxi", Component: RuxiPage },
       { path: "privacy", Component: PrivacyPage },
       { path: "*", Component: NotFound },
     ],

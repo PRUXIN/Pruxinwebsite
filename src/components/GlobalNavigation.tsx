@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function GlobalNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isDarkPage = location.pathname === '/' || location.pathname === '/clara' || location.pathname === '/projects';
+  const isDarkPage = location.pathname === '/' || location.pathname === '/ruxi' || location.pathname === '/projects';
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -21,7 +21,7 @@ export default function GlobalNavigation() {
     { name: 'About', href: '/about' },
     { name: 'Content', href: '/content' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Clara', href: '/clara', accent: true },
+    { name: 'Ruxi', href: '/ruxi', accent: true },
   ];
 
   const useDarkText = !isDarkPage;

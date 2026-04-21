@@ -239,7 +239,7 @@ export default function ContactPage() {
                     +44 131 381 5821
                   </a>
                   <p className="type-body-small text-[var(--color-gray-500)]">
-                    Or speak to Clara, our AI receptionist — available 24/7.
+                    Or speak to Ruxi, our AI receptionist — available 24/7.
                   </p>
                 </div>
               </div>

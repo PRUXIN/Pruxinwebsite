@@ -405,7 +405,7 @@
   border-radius: 4px;
 }
 
-/* Scoped override: focus rings visible on Clara's dark background */
-.clara-page :is(button, a, input):focus-visible {
+/* Scoped override: focus rings visible on Ruxi's dark background */
+.ruxi-page :is(button, a, input):focus-visible {
   outline-color: #14B8A6;
 }

@@ -28,7 +28,7 @@ export default function HomePage() {
       meta.name = 'description';
       document.head.appendChild(meta);
     }
-    meta.setAttribute('content', 'PRUXIN helps professional service businesses stop losing clients to missed calls and unclear experiences. Clara, our AI receptionist, answers every call automatically.');
+    meta.setAttribute('content', 'PRUXIN helps professional service businesses stop losing clients to missed calls and unclear experiences. Ruxi, our AI receptionist, answers every call automatically.');
   }, []);
 
   // Step 3 — Services: AI Automation leads, UX Audits second, Product Design third
@@ -38,12 +38,12 @@ export default function HomePage() {
       title: 'AI Automation Workflows',
       num: '01',
       description:
-        'Clara is the first product. PRUXIN builds AI-powered workflows that handle inbound calls, qualify leads, and connect your tools — so you spend time closing, not chasing.',
+        'Ruxi is the first product. PRUXIN builds AI-powered workflows that handle inbound calls, qualify leads, and connect your tools — so you spend time closing, not chasing.',
       gradient: 'from-teal-500 to-emerald-400',
       iconBg: 'bg-gradient-to-br from-teal-500/20 to-emerald-400/10',
       iconColor: 'text-teal-500',
-      cta: 'Explore Clara',
-      ctaHref: '/clara',
+      cta: 'Explore Ruxi',
+      ctaHref: '/ruxi',
       isExternal: false,
     },
     {
@@ -137,10 +137,10 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="type-body-large text-white/55 mb-14 max-w-2xl"
           >
-            Clara is your AI receptionist. She answers every call, qualifies the enquiry, and books the appointment — while you're doing the work that matters.
+            Ruxi is your AI receptionist. She answers every call, qualifies the enquiry, and books the appointment — while you're doing the work that matters.
           </motion.p>
 
-          {/* Single CTA only — "See how it works" → /clara */}
+          {/* Single CTA only — "See how it works" → /ruxi */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -148,7 +148,7 @@ export default function HomePage() {
           >
             <MagneticWrap strength={0.15}>
               <Link
-                to="/clara"
+                to="/ruxi"
                 className="group relative inline-flex items-center justify-center h-[56px] px-10 text-[17px] font-semibold rounded-full overflow-hidden transition-all duration-300 shadow-[0_4px_30px_rgba(255,255,255,0.12)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)]"
               >
                 <div className="absolute inset-0 bg-white" />
@@ -200,7 +200,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ===== CLARA FEATURE SECTION — Step 2 ===== */}
+      {/* ===== RUXI FEATURE SECTION — Step 2 ===== */}
       <section className="py-[96px] px-6 relative overflow-hidden" style={{ background: '#060B14' }}>
         {/* Radial teal glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -240,8 +240,8 @@ export default function HomePage() {
                 <h2 className="text-[clamp(32px,5vw,60px)] font-bold text-white leading-[1.05] mb-5 tracking-tight">
                   Most missed calls don't go to voicemail.<br />They go to your competitor.
                 </h2>
-                <p className="text-[17px] text-white/55 leading-relaxed mb-8 max-w-[440px]">
-                  Clara answers instantly, every time. Real conversation — no phone trees, no scripts. She qualifies the lead and books directly into your calendar. Automatically. While you're with a client.
+                <p className="text-[17px] text-white/55 leading-relaxed mb-8 max-w-[440px] text-[#ffffffd6]">
+                  Ruxi answers instantly, every time. Real conversation — no phone trees, no scripts. She qualifies the lead and books directly into your calendar. Automatically. While you're with a client.
                 </p>
 
                 {/* Single CTA only — phone call */}
@@ -256,7 +256,7 @@ export default function HomePage() {
                   </a>
                 </div>
 
-                <p className="text-white/25 text-[13px]">
+                <p className="text-white/25 text-[13px] text-[#ffffff99]">
                   UK number · Books into your calendar · No voicemail · Real conversation, not a bot
                 </p>
               </RevealOnScroll>
@@ -315,7 +315,7 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="type-display-small text-[var(--color-black)] mb-16 text-center">
               Design that removes confusion,{' '}
-              <span className="gradient-text-blue-purple">not adds to it</span>
+              <span className="gradient-text-blue-purple"><br />not adds to it</span>
             </h2>
           </RevealOnScroll>
 
@@ -362,7 +362,7 @@ export default function HomePage() {
                 missed calls, unclear processes, friction that lived between the cracks.
               </p>
               <p className="type-body-medium text-[var(--color-gray-600)] mb-6">
-                Clara is the fix for the most common one. PRUXIN is the fix for everything else.
+                Ruxi is the fix for the most common one. PRUXIN is the fix for everything else.
               </p>
               <p className="type-body-medium text-[var(--color-gray-600)]">
                 Seven years in technical support at Siemens, Atos, and Microsoft taught me one
@@ -385,10 +385,10 @@ export default function HomePage() {
               Built by PRUXIN. Proven on our own business first.
             </p>
             <h2 className="type-display-small text-[var(--color-black)] text-center mb-4">
-              Clara isn't something we sell without using.
+              Ruxi isn't something we sell <br />without using.
             </h2>
             <p className="type-body-large text-[var(--color-gray-500)] text-center mb-16 max-w-xl mx-auto">
-              It runs PRUXIN's own inbound calls. Every feature was tested on real enquiries before it reached a single client. We also help businesses fix the digital experiences that cost them clients — unclear websites, confusing booking flows, broken onboarding. But Clara is where we start.
+              It runs PRUXIN's own inbound calls. Every feature was tested on real enquiries before it reached a single client. We also help businesses fix the digital experiences that cost them clients — unclear websites, confusing booking flows, broken onboarding. But Ruxi is where we start.
             </p>
           </RevealOnScroll>
 

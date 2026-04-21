@@ -104,7 +104,7 @@ export default function AboutPage() {
 
           <RevealOnScroll delay={0.15} direction="right">
             <p className="type-body-large text-[var(--color-gray-700)] mb-6">
-              I'm Pranav Raval — a product and UX designer based in Glasgow. I help businesses remove the friction that quietly costs them clients. That's PRUXIN. That's Clara.
+              I'm Pranav Raval — a product and UX designer based in Glasgow. I help businesses remove the friction that quietly costs them clients. That's PRUXIN. That's Ruxi.
             </p>
             <p className="type-body-medium text-[var(--color-gray-600)]">
               Seven years in technical support taught me that most business problems aren't user problems — they're clarity problems. PRUXIN exists to fix that.
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 }}
               />
               <div className="relative bg-white rounded-2xl p-8 shadow-subtle">
-                <p className="type-body-large font-semibold italic gradient-text-blue-purple">
+                <p className="type-body-large font-semibold italic gradient-text-blue-purple text-center">
                   "Support tickets are just symptoms. The disease is unclear design."
                 </p>
               </div>
@@ -161,8 +161,8 @@ export default function AboutPage() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.3}>
-            <p className="type-body-medium text-[var(--color-gray-600)] mt-8">
-              Clara came from that same thinking. The most common symptom I kept seeing in professional service businesses wasn't a website problem — it was a missed call problem. So we built the fix.
+            <p className="type-body-medium text-[var(--color-gray-600)] mt-8 text-left">
+              Ruxi came from that same thinking. The most common symptom I kept seeing in professional service businesses wasn't a website problem — it was a missed call problem. So we built the fix.
             </p>
           </RevealOnScroll>
         </div>

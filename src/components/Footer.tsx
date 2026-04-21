@@ -21,7 +21,7 @@ export default function Footer() {
     { name: 'About', href: '/about' },
     { name: 'Content', href: '/content' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Clara', href: '/clara' },
+    { name: 'Ruxi', href: '/ruxi' },
     { name: 'Privacy Policy', href: '/privacy' },
   ];
 
